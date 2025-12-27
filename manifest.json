@@ -1,0 +1,21 @@
+{
+  "name": "Zaandak - Professionele Dakdekker",
+  "short_name": "Zaandak",
+  "description": "Professionele dakdekker in Zaandam en omgeving. Specialist in dakpannen, bitumen, loodwerk en nokvorst herstel.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a2332",
+  "theme_color": "#1a2332",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "roofing", "construction"],
+  "lang": "nl",
+  "dir": "ltr"
+}

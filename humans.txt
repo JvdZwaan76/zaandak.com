@@ -1,0 +1,16 @@
+/* TEAM */
+Company: Zaandak
+Location: Zaandam, Netherlands
+Contact: info@zaandak.nl
+Website: https://zaandak.com
+
+/* SITE */
+Last update: 2025/01/01
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Responsive Design, SEO Optimized
+Software: VS Code, Git
+
+/* THANKS */
+Fonts: Google Fonts (Poppins)
+Icons: Custom SVG Icons
+Images: Professional Roofing Photography

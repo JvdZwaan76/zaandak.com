@@ -1,0 +1,15 @@
+# robots.txt for zaandak.com
+# Allow all search engines to crawl the entire site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://zaandak.com/sitemap.xml
+
+# Optional: Disallow certain paths if needed in future
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional, helps prevent server overload)
+# Crawl-delay: 1
