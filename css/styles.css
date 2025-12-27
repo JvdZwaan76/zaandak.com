@@ -25,6 +25,8 @@
 
 html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -33,6 +35,31 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background: var(--white);
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--primary-orange);
+    outline-offset: 2px;
+}
+
+/* Skip to main content for screen readers */
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-orange);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-main:focus {
+    top: 0;
 }
 
 /* ============================================
@@ -392,11 +419,23 @@ nav a:hover::after {
 .service-image {
     width: 100%;
     height: 220px;
-    background-size: cover;
-    background-position: center;
     position: relative;
     overflow: hidden;
     border-radius: 15px 15px 0 0;
+    background: var(--dark-navy);
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
 }
 
 .service-image::after {
@@ -646,8 +685,8 @@ nav.active {
     }
 
     .slider-arrow {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         font-size: 20px;
     }
 
@@ -657,6 +696,16 @@ nav.active {
 
     .slider-arrow.next {
         right: 15px;
+    }
+    
+    /* Improved touch targets for mobile */
+    nav a,
+    .service-link,
+    .cta-button {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
