@@ -361,7 +361,7 @@ nav a:hover::after {
 .service-card {
     background: var(--white);
     border-radius: 15px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 5px 25px rgba(0,0,0,0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
@@ -396,6 +396,7 @@ nav a:hover::after {
     background-position: center;
     position: relative;
     overflow: hidden;
+    border-radius: 15px 15px 0 0;
 }
 
 .service-image::after {
@@ -675,5 +676,16 @@ nav.active {
     .cta-button {
         padding: 10px 20px;
         font-size: 13px;
+    }
+    
+    .service-icon {
+        width: 55px;
+        height: 55px;
+        bottom: -28px;
+    }
+    
+    .service-icon svg {
+        width: 26px;
+        height: 26px;
     }
 }
