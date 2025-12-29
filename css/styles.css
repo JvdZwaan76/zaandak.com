@@ -381,8 +381,22 @@ nav a:hover::after {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1400px;
+    }
 }
 
 .service-card {
@@ -613,6 +627,18 @@ footer {
     }
 }
 
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 /* ============================================
    MOBILE MENU STYLES
    ============================================ */
@@ -659,10 +685,17 @@ nav.active {
     .slide-title {
         font-size: 42px;
     }
+    
+    .section-header {
+        margin-bottom: 50px;
+    }
+}
 
+/* Tablet landscape - 2 columns */
+@media (min-width: 768px) and (max-width: 992px) {
     .services-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
     }
 }
 
@@ -707,34 +740,136 @@ nav.active {
         align-items: center;
         justify-content: center;
     }
+    
+    /* Better service card spacing */
+    .service-content {
+        padding: 45px 20px 25px;
+    }
+    
+    .service-title {
+        font-size: 20px;
+    }
+    
+    /* Footer responsive */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-slider {
-        height: 500px;
+        height: 450px;
     }
 
     .slide-title {
-        font-size: 26px;
+        font-size: 24px;
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+    
+    .slide-subtitle {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        margin-bottom: 10px;
     }
 
     .services-section {
-        padding: 60px 20px;
+        padding: 50px 15px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+    
+    .section-subtitle {
+        font-size: 12px;
     }
 
     .cta-button {
-        padding: 10px 20px;
-        font-size: 13px;
+        padding: 12px 24px;
+        font-size: 14px;
     }
     
     .service-icon {
-        width: 55px;
-        height: 55px;
-        bottom: -28px;
+        width: 50px;
+        height: 50px;
+        bottom: -25px;
     }
     
     .service-icon svg {
-        width: 26px;
-        height: 26px;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .service-content {
+        padding: 40px 20px 20px;
+    }
+    
+    .service-title {
+        font-size: 19px;
+    }
+    
+    .service-description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .slider-dots {
+        bottom: 15px;
+    }
+    
+    .slider-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    /* Logo size adjustment */
+    .logo {
+        height: 45px;
+    }
+    
+    /* Footer mobile optimization */
+    footer {
+        padding: 40px 15px 20px;
+    }
+    
+    .footer-content {
+        gap: 25px;
+    }
+    
+    .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-section p,
+    .footer-section a {
+        font-size: 14px;
+    }
+}
+
+/* Extra large screens optimization */
+@media (min-width: 1400px) {
+    .header-content,
+    .slide-content,
+    .services-section,
+    .footer-content {
+        max-width: 1400px;
+    }
+    
+    .slide-title {
+        font-size: 64px;
+    }
+    
+    .section-title {
+        font-size: 44px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
     }
 }
