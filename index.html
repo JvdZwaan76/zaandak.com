@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Zaandak - Professionele dakdekker in Zaandam en omgeving. Specialist in dakpannen, bitumen, loodwerk en nokvorst herstel.">
     <meta name="keywords" content="dakdekker, zaandam, dakpannen, bitumen, loodwerk, nokvorst, dakdekker zaandam, dakreparatie, dakisolatie, zinkwerk">
     <meta name="author" content="Zaandak">
@@ -37,7 +39,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Preload critical resources -->
+    <!-- Preload Critical Resources -->
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="js/script.js" as="script">
     <link rel="preload" href="images/logo.svg" as="image">
@@ -45,7 +47,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
     
-    <!-- Favicon -->
+    <!-- Favicon & App Icons -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="manifest" href="manifest.json">
@@ -87,15 +89,16 @@
     }
     </script>
 </head>
+
 <body>
-    <!-- Skip to main content for screen readers -->
+    <!-- Skip to Main Content (Accessibility) -->
     <a href="#diensten" class="skip-to-main">Spring naar hoofdinhoud</a>
     
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="top-bar-content">
             <div>📞 Contact: +31 (0)20 123 4567</div>
-            <div>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="deb7b0b8b19ea4bfbfb0babfb5f0bdb1b3">[email&#160;protected]</a></div>
+            <div>✉️ <a href="mailto:info@zaandak.nl">info@zaandak.nl</a></div>
         </div>
     </div>
 
@@ -121,22 +124,11 @@
                     </div>
                 </div>
                 
-                <div class="dropdown">
-                    <a href="#gids">Dakpannen Vervangen Gids</a>
-                    <div class="dropdown-content">
-                        <a href="#">Wanneer dakpannen vervangen?</a>
-                        <a href="#">Dakpannen Vervangen en Isoleren</a>
-                        <a href="#">De Levensduur van Dakpannen</a>
-                    </div>
-                </div>
-                
-                <a href="#over">Over ons</a>
+                <a href="#over-ons">Over ons</a>
                 <a href="#contact">Contact</a>
+                <a href="#contact" class="cta-button">Offerte aanvragen</a>
             </nav>
-            
-            <!-- CTA Button -->
-            <a href="#contact" class="cta-button">Offerte aanvragen</a>
-            
+
             <!-- Mobile Menu Toggle -->
             <div class="mobile-toggle" onclick="toggleMobileMenu()">
                 <span></span>
@@ -160,7 +152,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1920&q=80');">
+        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1590739225017-0b8cfa8bae30?w=1920&q=80');">
             <div class="slide-overlay">
                 <div class="slide-content">
                     <p class="slide-subtitle">Kwaliteit En Duurzaamheid</p>
@@ -171,7 +163,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1609220361373-d5c9e0f29498?w=1920&q=80');">
+        <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1920&q=80');">
             <div class="slide-overlay">
                 <div class="slide-content">
                     <p class="slide-subtitle">Experts in alle soorten daken</p>
@@ -181,11 +173,12 @@
             </div>
         </div>
 
-        <!-- Slider Navigation -->
-        <div class="slider-arrow prev" onclick="changeSlide(-1)">‹</div>
-        <div class="slider-arrow next" onclick="changeSlide(1)">›</div>
-        
-        <div class="slider-nav">
+        <!-- Slider Controls -->
+        <button class="slider-arrow prev" onclick="changeSlide(-1)" aria-label="Vorige slide">‹</button>
+        <button class="slider-arrow next" onclick="changeSlide(1)" aria-label="Volgende slide">›</button>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots">
             <div class="slider-dot active" onclick="goToSlide(0)"></div>
             <div class="slider-dot" onclick="goToSlide(1)"></div>
             <div class="slider-dot" onclick="goToSlide(2)"></div>
@@ -293,35 +286,41 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Zaandak</h3>
-                <p>Professionele dakdekker in Zaandam en omgeving. Specialist in alle soorten dakwerkzaamheden.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Services</h3>
-                <a href="#">Bitumen dakbedekking</a>
-                <a href="#">Dakpannen vervangen</a>
-                <a href="#">Zinkwerk</a>
-                <a href="#">Loodwerk</a>
-                <a href="#">Nokvorst herstel</a>
+                <p>Professionele dakdekker in Zaandam en omgeving. Uw dak, onze zorg.</p>
             </div>
             
             <div class="footer-section">
                 <h3>Contact</h3>
                 <p>📞 +31 (0)20 123 4567</p>
-                <p>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c2abaca4ad82b8a3a3aca6a3a9eca1adaf">[email&#160;protected]</a></p>
-                <p>📍 Zaandam, Noord-Holland</p>
+                <p>✉️ <a href="mailto:info@zaandak.nl">info@zaandak.nl</a></p>
+                <p>📍 Zaandam, Nederland</p>
             </div>
             
             <div class="footer-section">
-                <h3>Werkgebied</h3>
-                <p>Zaandam • Amsterdam • Haarlem</p>
-                <p>Alkmaar • Purmerend • Hoorn</p>
+                <h3>Diensten</h3>
+                <p><a href="#dakpannen">Dakpannen vervangen</a></p>
+                <p><a href="#nokvorst">Nokvorst herstel</a></p>
+                <p><a href="#loodwerk">Loodwerk</a></p>
+                <p><a href="#bitumen">Bitumen daken</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Openingstijden</h3>
+                <p>Ma - Vr: 08:00 - 17:00</p>
+                <p>Za - Zo: Gesloten</p>
             </div>
         </div>
         
         <div class="footer-bottom">
-      
+            <p>&copy; 2025 Zaandak. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
