@@ -1084,7 +1084,7 @@ nav.active {
     }
 
     .services-section {
-        padding: 50px 15px;
+        padding: 60px 0;  /* Only vertical padding */
     }
     
     .section-title {
