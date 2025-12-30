@@ -580,7 +580,7 @@ nav a:hover::after {
 }
 
 .services-grid {
-    max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -598,7 +598,6 @@ nav a:hover::after {
 @media (max-width: 992px) {
     .services-grid {
         grid-template-columns: 1fr;
-        max-width: 600px;
         gap: 40px;
     }
 }
@@ -606,7 +605,6 @@ nav a:hover::after {
 @media (min-width: 1400px) {
     .services-grid {
         grid-template-columns: repeat(4, 1fr);
-        max-width: 1400px;
     }
 }
 
