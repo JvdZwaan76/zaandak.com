@@ -293,7 +293,7 @@
                 </div>
                 <div class="top-bar-item">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#5f363139301f253e3e313b3e34713133" aria-label="Email ons op info@zaandak.nl"><span class="__cf_email__" data-cfemail="533a3d353c132932323d3732387d3d3f">[email&#160;protected]</span></a>
+                    <a href="mailto:info@zaandak.nl" aria-label="Email ons op info@zaandak.nl">info@zaandak.nl</a>
                 </div>
             </div>
         </div>
@@ -498,7 +498,7 @@
                 </p>
                 <p>
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#6c05020a032c160d0d02080d07420200" aria-label="Email ons op info@zaandak.nl"><span class="__cf_email__" data-cfemail="91f8fff7fed1ebf0f0fff5f0fabffffd">[email&#160;protected]</span></a>
+                    <a href="mailto:info@zaandak.nl" aria-label="Email ons op info@zaandak.nl">info@zaandak.nl</a>
                 </p>
                 <p>
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -527,4 +527,16 @@
     </footer>
 
     <!-- JavaScript - Deferred for Performance -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-
+    <!-- JavaScript - Deferred for Performance -->
+    <script src="js/script.js" defer></script>
+    
+    <!-- Service Worker Registration for PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(() => {});
+            });
+        }
+    </script>
+</body>
+</html>
