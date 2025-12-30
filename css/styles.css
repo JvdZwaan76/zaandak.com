@@ -107,6 +107,13 @@ textarea:focus-visible,
     border-width: 0;
 }
 
+/* Main content area */
+main {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 /* ============================================
    TOP BAR
    ============================================ */
@@ -361,8 +368,10 @@ nav a:hover::after {
 .slide-content {
     text-align: center;
     color: var(--white);
-    max-width: 900px;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 40px;
+    width: 100%;
 }
 
 .slide-content.animate {
@@ -756,7 +765,11 @@ nav a:hover::after {
 footer {
     background: var(--dark-navy);
     color: var(--white);
-    padding: 80px 40px 40px;
+    padding: 80px 0 40px;
+}
+
+footer .container {
+    padding: 0 40px;
 }
 
 .footer-content {
@@ -828,7 +841,11 @@ footer {
 
 @media (max-width: 768px) {
     footer {
-        padding: 60px 20px 30px;
+        padding: 60px 0 30px;
+    }
+    
+    footer .container {
+        padding: 0 20px;
     }
     
     .footer-content {
