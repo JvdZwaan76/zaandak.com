@@ -277,63 +277,6 @@
       ]
     }
     </script>
-    
-    <!-- CRITICAL OVERRIDE STYLES - Must load last! -->
-    <style>
-        /* Force services section centering - overrides all other CSS */
-        .services-section {
-            width: 100% !important;
-            background: #f8f9fa !important;
-            padding: 120px 0 !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: flex-start !important;
-            margin: 0 !important;
-        }
-        
-        .services-section .container {
-            width: 1400px !important;
-            max-width: calc(100% - 80px) !important;
-            padding: 0 40px !important;
-            box-sizing: border-box !important;
-            margin: 0 !important;
-        }
-        
-        .services-grid {
-            width: 100% !important;
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 40px !important;
-            margin: 0 !important;
-        }
-        
-        @media (min-width: 1400px) {
-            .services-grid {
-                grid-template-columns: repeat(4, 1fr) !important;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .services-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .services-section {
-                padding: 80px 0 !important;
-            }
-            .services-section .container {
-                padding: 0 20px !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .services-section {
-                padding: 60px 0 !important;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -445,14 +388,14 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services-section" id="diensten" aria-labelledby="services-heading" style="width: 100%; background: #f8f9fa; padding: 120px 0; display: flex; justify-content: center; align-items: flex-start;">
-        <div class="container" style="width: 1400px; max-width: calc(100% - 80px); padding: 0 40px; box-sizing: border-box;">
+    <section id="diensten" aria-labelledby="services-heading" style="width: 100%; background: #f8f9fa; padding: 120px 0; margin: 0;">
+        <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
             <div class="section-header">
                 <p class="section-subtitle">Onze SERVICES</p>
                 <h2 class="section-title" id="services-heading">Hoge kwaliteit dakwerk services</h2>
             </div>
 
-            <div class="services-grid" style="width: 100% !important; margin: 0 !important; display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 40px !important;">
+            <div style="width: 100%; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
             <!-- Service 1: Dakpannen -->
             <article class="service-card" itemscope itemtype="https://schema.org/Service" tabindex="0" role="article">
                 <div class="service-image">
