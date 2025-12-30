@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
     <!-- Primary SEO Meta Tags -->
     <title>Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk | Zaandak</title>
     <meta name="title" content="Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk | Zaandak">
@@ -50,21 +58,46 @@
     <link rel="alternate" hreflang="nl-NL" href="https://zaandak.com/">
     <link rel="alternate" hreflang="x-default" href="https://zaandak.com/">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Optimized Loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Font Awesome - Optimized Loading -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    
+    <!-- Critical CSS - Inline for Fast First Paint -->
+    <style>
+        /* Critical above-the-fold styles */
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Poppins',sans-serif;color:#2d3748;line-height:1.6;overflow-x:hidden;background:#fff}
+        .top-bar{background:#1a2332;color:#fff;padding:12px 0;font-size:14px}
+        .container{max-width:1400px;margin:0 auto;padding:0 20px;width:100%}
+        header{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
+        .header-content{max-width:1400px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;min-height:80px}
+        .logo{height:50px;width:auto}
+        nav{display:flex;gap:30px;align-items:center}
+        nav a{color:#2d3748;text-decoration:none;font-weight:500;font-size:15px;transition:color .3s}
+        nav a:hover{color:#ff6b35}
+        .hero-slider{position:relative;width:100%;height:600px;overflow:hidden}
+        .slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1.5s}
+        .slide.active{opacity:1}
+        .slide-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,35,50,.85),rgba(255,107,53,.7));display:flex;align-items:center;justify-content:center}
+        .slide-content{text-align:center;color:#fff;max-width:1200px;margin:0 auto;padding:40px}
+        .slide-title{font-size:56px;font-weight:800;margin-bottom:30px;line-height:1.2}
+        .cta-button{background:#ff6b35;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:600;font-size:14px;transition:all .3s;display:inline-block;margin-top:20px}
+    </style>
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="js/script.js" as="script">
     <link rel="preload" href="images/logo.svg" as="image">
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Main Stylesheet - Deferred -->
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
     
     <!-- Favicon & App Icons -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -257,7 +290,7 @@
                 </div>
                 <div class="top-bar-item">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#dcb5b2bab39ca6bdbdb2b8bdb7f2b2b0" aria-label="Email ons op info@zaandak.nl"><span class="__cf_email__" data-cfemail="d7beb9b1b897adb6b6b9b3b6bcf9b9bb">[email&#160;protected]</span></a>
+                    <a href="mailto:info@zaandak.nl" aria-label="Email ons op info@zaandak.nl">info@zaandak.nl</a>
                 </div>
             </div>
         </div>
@@ -462,7 +495,7 @@
                 </p>
                 <p>
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#a6cfc8c0c9e6dcc7c7c8c2c7cd88c8ca" aria-label="Email ons op info@zaandak.nl"><span class="__cf_email__" data-cfemail="234a4d454c635942424d4742480d4d4f">[email&#160;protected]</span></a>
+                    <a href="mailto:info@zaandak.nl" aria-label="Email ons op info@zaandak.nl">info@zaandak.nl</a>
                 </p>
                 <p>
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -486,4 +519,20 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Zaandak. Alle rechten voorbehouden.</p>
+            <p>&copy; 2025 Zaandak. Alle rechten voorbehouden.</p>        </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript - Deferred for Performance -->
+    <script src="js/script.js" defer></script>
+    
+    <!-- Service Worker Registration for PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(() => {});
+            });
+        }
+    </script>
+</body>
+</html>
