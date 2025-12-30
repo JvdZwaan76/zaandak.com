@@ -277,6 +277,63 @@
       ]
     }
     </script>
+    
+    <!-- CRITICAL OVERRIDE STYLES - Must load last! -->
+    <style>
+        /* Force services section centering - overrides all other CSS */
+        .services-section {
+            width: 100% !important;
+            background: #f8f9fa !important;
+            padding: 120px 0 !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: flex-start !important;
+            margin: 0 !important;
+        }
+        
+        .services-section .container {
+            width: 1400px !important;
+            max-width: calc(100% - 80px) !important;
+            padding: 0 40px !important;
+            box-sizing: border-box !important;
+            margin: 0 !important;
+        }
+        
+        .services-grid {
+            width: 100% !important;
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 40px !important;
+            margin: 0 !important;
+        }
+        
+        @media (min-width: 1400px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .services-section {
+                padding: 80px 0 !important;
+            }
+            .services-section .container {
+                padding: 0 20px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .services-section {
+                padding: 60px 0 !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -296,7 +353,7 @@
                 </div>
                 <div class="top-bar-item">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="mailto:info@zaandak.nl" aria-label="Email ons op info at zaandak dot nl">info@zaandak.nl</a>
+                    <a href="/cdn-cgi/l/email-protection#bbd2d5ddd4fbc1dadad5dfdad095d5d7" aria-label="Email ons op info at zaandak dot nl"><span class="__cf_email__" data-cfemail="d6bfb8b0b996acb7b7b8b2b7bdf8b8ba">[email&#160;protected]</span></a>
                 </div>
             </div>
         </div>
@@ -501,7 +558,7 @@
                 </p>
                 <p>
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="mailto:info@zaandak.nl" aria-label="Email ons op info at zaandak dot nl">info@zaandak.nl</a>
+                    <a href="/cdn-cgi/l/email-protection#8ce5e2eae3ccf6edede2e8ede7a2e2e0" aria-label="Email ons op info at zaandak dot nl"><span class="__cf_email__" data-cfemail="5e373038311e243f3f303a3f35703032">[email&#160;protected]</span></a>
                 </p>
                 <p>
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -521,13 +578,3 @@
                 <h3>Openingstijden</h3>
                 <p>Ma - Vr: 08:00 - 17:00</p>
                 <p>Za - Zo: Gesloten</p>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Zaandak. Alle rechten voorbehouden.</p>        </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript - Deferred for Performance -->
-    <!-- Jav
