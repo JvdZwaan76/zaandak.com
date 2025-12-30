@@ -405,20 +405,32 @@ nav a:hover::after {
    ============================================ */
 
 .services-section {
-    padding: 120px 40px;
+    padding: 120px 0;
     background: var(--light-bg);
     position: relative;
 }
 
+.services-section .container {
+    padding: 0 40px;
+}
+
 @media (max-width: 768px) {
     .services-section {
-        padding: 80px 20px;
+        padding: 80px 0;
+    }
+    
+    .services-section .container {
+        padding: 0 20px;
     }
 }
 
 @media (max-width: 480px) {
     .services-section {
-        padding: 60px 20px;
+        padding: 60px 0;
+    }
+    
+    .services-section .container {
+        padding: 0 20px;
     }
 }
 
@@ -437,7 +449,8 @@ nav a:hover::after {
 
 .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin: 0 auto 80px;
+    max-width: 800px;
     position: relative;
     z-index: 1;
 }
