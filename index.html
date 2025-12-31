@@ -8,6 +8,45 @@
     <!-- Disable Cloudflare Email Obfuscation -->
     <meta name="cloudflare-email-obfuscation" content="off">
     
+    <!-- Mobile Responsive Overrides -->
+    <style>
+        /* Mobile optimization for services section */
+        @media (max-width: 992px) {
+            #diensten > div {
+                padding: 0 20px !important;
+            }
+            #diensten > div > div:last-child {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #diensten {
+                padding: 80px 0 !important;
+            }
+            .service-card {
+                margin: 0 !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #diensten {
+                padding: 60px 0 !important;
+            }
+            #diensten > div {
+                padding: 0 15px !important;
+                max-width: 100% !important;
+            }
+            .section-header {
+                margin-bottom: 40px !important;
+            }
+            .service-card {
+                padding: 20px !important;
+            }
+        }
+    </style>
+    
     <!-- DNS Prefetch & Preconnect for Performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -296,7 +335,7 @@
                 </div>
                 <div class="top-bar-item">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#bbd2d5ddd4fbc1dadad5dfdad095d5d7" aria-label="Email ons op info at zaandak dot nl"><span class="__cf_email__" data-cfemail="d6bfb8b0b996acb7b7b8b2b7bdf8b8ba">[email&#160;protected]</span></a>
+                    <!--email_off--><a href="mailto:info@zaandak.nl" aria-label="Email ons">info@zaandak.nl</a><!--/email_off-->
                 </div>
             </div>
         </div>
@@ -501,7 +540,7 @@
                 </p>
                 <p>
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#8ce5e2eae3ccf6edede2e8ede7a2e2e0" aria-label="Email ons op info at zaandak dot nl"><span class="__cf_email__" data-cfemail="5e373038311e243f3f303a3f35703032">[email&#160;protected]</span></a>
+                    <!--email_off--><a href="mailto:info@zaandak.nl" aria-label="Email ons">info@zaandak.nl</a><!--/email_off-->
                 </p>
                 <p>
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
