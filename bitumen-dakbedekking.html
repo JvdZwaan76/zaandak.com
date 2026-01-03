@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Disable Cloudflare Email Obfuscation -->
+    <meta name="cloudflare-email-obfuscation" content="off">
+    
+    <!-- Mobile Responsive Overrides -->
+    <style>
+        /* Mobile optimization for services section */
+        @media (max-width: 992px) {
+            #diensten > div {
+                padding: 0 20px !important;
+            }
+            #diensten > div > div:last-child {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #diensten {
+                padding: 80px 0 !important;
+            }
+            .service-card {
+                margin: 0 !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #diensten {
+                padding: 60px 0 !important;
+            }
+            #diensten > div {
+                padding: 0 15px !important;
+                max-width: 100% !important;
+            }
+            .section-header {
+                margin-bottom: 40px !important;
+            }
+            .service-card {
+                padding: 20px !important;
+            }
+        }
+    </style>
+    /* Page-specific mobile responsive */
+    @media (max-width: 992px) {
+        section > div { padding: 0 20px !important; }
+        section > div > div { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width: 768px) {
+        section { padding: 80px 0 !important; }
+        h1 { font-size: 36px !important; }
+        h2 { font-size: 28px !important; }
+    }
+    @media (max-width: 480px) {
+        section { padding: 60px 0 !important; }
+        section > div { padding: 0 15px !important; }
+        h1 { font-size: 28px !important; }
+        h2 { font-size: 24px !important; }
+    }
+    
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Bitumen Dakbedekking Zaandam | Waterdicht & Duurzaam | Zaandak</title>
+    <meta name="title" content="Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk | Zaandak">
+    <meta name="description" content="✓ Bitumen dakbedekking specialist ✓ Waterdicht & duurzaam ✓ Platte en hellende daken ✓ 20+ jaar ervaring ✓ Gratis offerte binnen 24 uur">
+    <meta name="keywords" content="dakdekker zaandam, dakpannen vervangen zaandam, bitumen dak zaandam, loodwerk dakdekker, nokvorst herstel, dakreparatie zaandam, dakisolatie, zinkwerk, dakrenovatie, dakonderhoud zaandam, dakdekker noord-holland">
+    <meta name="author" content="Zaandak">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="nl">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    
+    <!-- Geographic Meta Tags -->
+    <meta name="geo.region" content="NL-NH">
+    <meta name="geo.placename" content="Zaandam">
+    <meta name="geo.position" content="52.4388;4.8264">
+    <meta name="ICBM" content="52.4388, 4.8264">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zaandak.com/">
+    <meta property="og:title" content="Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk | Zaandak">
+    <meta property="og:description" content="✓ Professionele dakdekker in Zaandam ✓ 20+ jaar ervaring ✓ Dakpannen vervangen ✓ Bitumen daken ✓ Loodwerk ✓ Nokvorst herstel ✓ Gratis offerte">
+    <meta property="og:image" content="https://zaandak.com/images/Dakpannen-Vervangen-Zaandam.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Professionele dakdekker in Zaandam aan het werk">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:site_name" content="Zaandak">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://zaandak.com/">
+    <meta name="twitter:title" content="Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk">
+    <meta name="twitter:description" content="✓ Professionele dakdekker in Zaandam ✓ 20+ jaar ervaring ✓ Gratis offerte binnen 24 uur">
+    <meta name="twitter:image" content="https://zaandak.com/images/Dakpannen-Vervangen-Zaandam.webp">
+    <meta name="twitter:image:alt" content="Professionele dakdekker in Zaandam">
+    
+    <!-- Canonical & Alternate -->
+    <link rel="canonical" href="https://zaandak.com/bitumen-dakbedekking.html">
+    <link rel="alternate" hreflang="nl" href="https://zaandak.com/">
+    <link rel="alternate" hreflang="nl-NL" href="https://zaandak.com/">
+    <link rel="alternate" hreflang="x-default" href="https://zaandak.com/">
+    
+    <!-- Google Fonts - Optimized Loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Font Awesome - Optimized Loading -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    
+    <!-- Critical CSS - Inline for Fast First Paint -->
+    <style>
+        /* Critical above-the-fold styles */
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Poppins',sans-serif;color:#2d3748;line-height:1.6;overflow-x:hidden;background:#fff}
+        .top-bar{background:#1a2332;color:#fff;padding:12px 0;font-size:14px}
+        .container{max-width:1400px;margin:0 auto;padding:0 20px;width:100%}
+        header{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
+        .header-content{max-width:1400px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;min-height:80px}
+        .logo{height:50px;width:auto}
+        nav{display:flex;gap:30px;align-items:center}
+        nav a{color:#2d3748;text-decoration:none;font-weight:500;font-size:15px;transition:color .3s}
+        nav a:hover{color:#ff6b35}
+        .hero-slider{position:relative;width:100%;height:600px;overflow:hidden}
+        .slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1.5s}
+        .slide.active{opacity:1}
+        .slide-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,35,50,.85),rgba(255,107,53,.7));display:flex;align-items:center;justify-content:center}
+        .slide-content{text-align:center;color:#fff;max-width:1200px;margin:0 auto;padding:40px}
+        .slide-title{font-size:56px;font-weight:800;margin-bottom:30px;line-height:1.2}
+        .cta-button{background:#ff6b35;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:600;font-size:14px;transition:all .3s;display:inline-block;margin-top:20px}
+    </style>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="images/logo.svg" as="image">
+    
+    <!-- Main Stylesheet - Deferred -->
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+    
+    <!-- Services Centering Fix - Override any conflicts -->
+    <link rel="stylesheet" href="css/services-centering-fix.css">
+    
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a2332">
+    
+    <!-- Structured Data / Schema.org - Enhanced for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://zaandak.com/#localbusiness",
+          "name": "Zaandak",
+          "alternateName": "Zaandak Dakdekkers",
+          "description": "Professionele dakdekker in Zaandam en omgeving. Specialist in dakpannen, bitumen, loodwerk en nokvorst herstel met 20+ jaar ervaring.",
+          "url": "https://zaandak.com",
+          "telephone": "+31623313469",
+          "email": "info@zaandak.nl",
+          "priceRange": "€€",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://zaandak.com/images/Dakpannen-Vervangen-Zaandam.webp",
+            "width": 1200,
+            "height": 630
+          },
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://zaandak.com/images/logo.svg",
+            "width": 200,
+            "height": 50
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Zaandam",
+            "addressRegion": "Noord-Holland",
+            "postalCode": "1500",
+            "addressCountry": "NL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "52.4388",
+            "longitude": "4.8264"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Zaandam"
+            },
+            {
+              "@type": "City",
+              "name": "Amsterdam"
+            },
+            {
+              "@type": "City",
+              "name": "Zaanstad"
+            },
+            {
+              "@type": "State",
+              "name": "Noord-Holland"
+            }
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:00",
+              "closes": "17:00"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zaandak.com/#website",
+          "url": "https://zaandak.com",
+          "name": "Zaandak",
+          "description": "Professionele dakdekker in Zaandam",
+          "publisher": {
+            "@id": "https://zaandak.com/#localbusiness"
+          },
+          "inLanguage": "nl-NL"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://zaandak.com/#webpage",
+          "url": "https://zaandak.com",
+          "name": "Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk | Zaandak",
+          "isPartOf": {
+            "@id": "https://zaandak.com/#website"
+          },
+          "about": {
+            "@id": "https://zaandak.com/#localbusiness"
+          },
+          "description": "Professionele dakdekker in Zaandam met 20+ jaar ervaring. Specialist in dakpannen vervangen, bitumen daken, loodwerk en nokvorst herstel.",
+          "inLanguage": "nl-NL"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://zaandak.com/#service-dakpannen",
+          "serviceType": "Dakpannen vervangen",
+          "provider": {
+            "@id": "https://zaandak.com/#localbusiness"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Zaandam"
+          },
+          "description": "Deskundige installatie en onderhoud van dakpannen, met de garantie van langdurige kwaliteit en een aantrekkelijk uiterlijk."
+        },
+        {
+          "@type": "Service",
+          "@id": "https://zaandak.com/#service-nokvorst",
+          "serviceType": "Nokvorst herstel",
+          "provider": {
+            "@id": "https://zaandak.com/#localbusiness"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Zaandam"
+          },
+          "description": "Voorkomt lekkages en beschermt uw dak door beschadigde nokvorsten te vervangen of te repareren."
+        },
+        {
+          "@type": "Service",
+          "@id": "https://zaandak.com/#service-loodwerk",
+          "serviceType": "Loodwerk",
+          "provider": {
+            "@id": "https://zaandak.com/#localbusiness"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Zaandam"
+          },
+          "description": "Loodwerk zorgt voor waterdichte aansluitingen en langdurige bescherming tegen lekkages."
+        },
+        {
+          "@type": "Service",
+          "@id": "https://zaandak.com/#service-bitumen",
+          "serviceType": "Bitumen daken",
+          "provider": {
+            "@id": "https://zaandak.com/#localbusiness"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Zaandam"
+          },
+          "description": "Onze service voor het branden van bitumen daken zorgt voor een waterdichte en duurzame afwerking."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://zaandak.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://zaandak.com/"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#diensten" class="skip-to-main">Spring naar hoofdinhoud</a>
+    
+    <!-- Screen reader announcements -->
+    <div class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+    
+    <!-- Top Bar -->
+    <div class="top-bar" role="complementary" aria-label="Contact informatie">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                    <a href="tel:+31623313469" aria-label="Bel ons op +31 6 23313469">+31 (06) 23313469</a>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:info@zaandak.nl" aria-label="Email ons">info@zaandak.nl</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <!-- Logo -->
+            <img src="images/logo.svg" alt="Zaandak Logo" class="logo">
+            
+            <!-- Desktop Navigation -->
+            <nav id="nav">
+                <a href="#home">Home</a>
+                
+                <div class="dropdown">
+                    <a href="#diensten">Diensten</a>
+                    <div class="dropdown-content">
+                        <a href="#bitumen">Bitumen dakbedekking</a>
+                        <a href="#dakpannen">Dakpannen vervangen</a>
+                        <a href="#zinkwerk">Zinkwerk</a>
+                        <a href="#loodwerk">Lood werk</a>
+                        <a href="#nokvorst">Nokvorst herstel</a>
+                        <a href="#isolatie">Dakisolatie</a>
+                    </div>
+                </div>
+                
+                <a href="#over-ons">Over ons</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="cta-button">Offerte aanvragen</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Slider -->
+        <section class="hero-slider" id="home" aria-label="Banner carousel">
+        <!-- Slide 1: Roof Repair -->
+        <div class="slide active" style="background-image: linear-gradient(rgba(26, 35, 50, 0.5), rgba(26, 35, 50, 0.5)), url('https://images.unsplash.com/photo-1632778630163-7d1f500ebf53?w=1920&q=80');">
+            <div class="slide-overlay">
+                <div class="slide-content animate">
+                    <p class="slide-subtitle">Uw dak, onze zorg</p>
+                    <h1 class="slide-title">Voor Een Perfect Afgewerkt Dak</h1>
+                    <a href="#contact" class="cta-button">Neem contact op</a>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        
+        <!-- Hero Section -->
+        <section style="width: 100%; background: linear-gradient(rgba(26,35,50,0.8), rgba(26,35,50,0.8)), url('images/workers-placing-a-vapor-barrier-on-the-roof-using-2023-11-27-05-23-15-utc-scaled.webp'); background-size: cover; background-position: center; padding: 180px 0 120px; margin: 0;">
+            <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box; text-align: center;">
+                <h1 style="color: #fff; font-size: 48px; margin-bottom: 20px; font-weight: 700;">Bitumen Dakbedekking</h1>
+                <p style="color: #fff; font-size: 20px; max-width: 700px; margin: 0 auto;">Duurzame en waterdichte oplossing voor uw platte of hellende dak</p>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section style="width: 100%; background: #fff; padding: 120px 0; margin: 0;">
+            <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="font-size: 36px; color: #1a2332; margin-bottom: 30px;">Professionele Bitumen Dakbedekking</h2>
+                    
+                    <p style="font-size: 18px; line-height: 1.8; color: #666; margin-bottom: 25px;">
+                        Bitumen dakbedekking is een populaire keuze voor zowel platte als licht hellende daken. Dit veelzijdige materiaal staat bekend om zijn duurzaamheid, waterdichtheid en betaalbaarheid. Of u nu op zoek bent naar een volledig nieuwe dakbedekking of uw bestaande dak wilt laten repareren, met bitumen maakt u altijd een verstandige keuze.
+                    </p>
+                    
+                    <p style="font-size: 18px; line-height: 1.8; color: #666; margin-bottom: 25px;">
+                        Bij Zaandak hebben onze ervaren dakdekkers jarenlange expertise in het aanbrengen en repareren van bitumen dakbedekkingen. We gebruiken alleen hoogwaardige materialen en werken volgens de nieuwste technieken om uw dak volledig waterdicht en duurzaam te maken.
+                    </p>
+                    
+                    <p style="font-size: 18px; line-height: 1.8; color: #666; margin-bottom: 25px;">
+                        Van het voorbereiden van het dakoppervlak tot de laatste afwerking - wij nemen elke stap zorgvuldig om ervoor te zorgen dat uw nieuwe dak jarenlang meegaat. Bovendien adviseren wij u graag over de verschillende soorten bitumen en welke het beste bij uw specifieke situatie past.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section style="width: 100%; background: #f8f9fa; padding: 120px 0; margin: 0;">
+            <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+                
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <h2 style="font-size: 36px; color: #1a2332; margin-bottom: 20px;">Voordelen van Bitumen Dakbedekking</h2>
+                    <p style="font-size: 18px; color: #666;">Waarom kiezen voor bitumen?</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+                    
+                    <!-- Benefit 1: Duurzaamheid -->
+                    <div style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <div style="width: 70px; height: 70px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                            <i class="fas fa-shield-alt" style="color: #fff; font-size: 32px;"></i>
+                        </div>
+                        <h3 style="font-size: 24px; color: #1a2332; margin-bottom: 15px;">Duurzaamheid</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 16px;">
+                            Bitumen daken gaan jarenlang mee en kunnen goed tegen de diverse weersomstandigheden die ons klimaat te bieden heeft. Met de juiste installatie en onderhoud kan een bitumen dak 20-30 jaar meegaan.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 2: Waterdichtheid -->
+                    <div style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <div style="width: 70px; height: 70px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                            <i class="fas fa-tint" style="color: #fff; font-size: 32px;"></i>
+                        </div>
+                        <h3 style="font-size: 24px; color: #1a2332; margin-bottom: 15px;">Volledig Waterdicht</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 16px;">
+                            Dit hoogwaardige materiaal is uitermate geschikt om uw dak volledig waterdicht te maken, waardoor lekkages tot het verleden behoren. De naadloze afwerking zorgt voor optimale bescherming.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 3: Kosteneffectief -->
+                    <div style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <div style="width: 70px; height: 70px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                            <i class="fas fa-euro-sign" style="color: #fff; font-size: 32px;"></i>
+                        </div>
+                        <h3 style="font-size: 24px; color: #1a2332; margin-bottom: 15px;">Betaalbaar</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 16px;">
+                            Vergeleken met andere dakbedekkingsmaterialen is bitumen een kostenefficiënte oplossing zonder in te boeten op kwaliteit. U krijgt waar voor uw geld met een duurzaam resultaat.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 4: Onderhoudsvriendelijk -->
+                    <div style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        <div style="width: 70px; height: 70px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                            <i class="fas fa-tools" style="color: #fff; font-size: 32px;"></i>
+                        </div>
+                        <h3 style="font-size: 24px; color: #1a2332; margin-bottom: 15px;">Onderhoudsvriendelijk</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 16px;">
+                            Bitumen dakbedekking vereist weinig onderhoud, wat zorgt voor een langdurig mooi en functioneel dakoppervlak en optimaal wooncomfort zonder gedoe.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Services We Offer Section -->
+        <section style="width: 100%; background: #fff; padding: 120px 0; margin: 0;">
+            <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+                
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <h2 style="font-size: 36px; color: #1a2332; margin-bottom: 20px;">Onze Bitumen Diensten</h2>
+                    <p style="font-size: 18px; color: #666;">Van nieuw tot reparatie - wij doen het allemaal</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; max-width: 1000px; margin: 0 auto;">
+                    
+                    <!-- Service 1 -->
+                    <div>
+                        <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #ff6b35;">
+                            <h3 style="font-size: 22px; color: #1a2332; margin-bottom: 15px;">
+                                <i class="fas fa-plus-circle" style="color: #ff6b35; margin-right: 10px;"></i>
+                                Nieuwe Bitumen Dakbedekking
+                            </h3>
+                            <p style="color: #666; line-height: 1.6;">
+                                Wanneer uw dak toe is aan vernieuwing, bieden wij een complete nieuwe bitumen dakbedekking aan. Ons team zorgt voor vakkundige installatie met hoogwaardige materialen en perfecte afwerking.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div>
+                        <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #ff6b35;">
+                            <h3 style="font-size: 22px; color: #1a2332; margin-bottom: 15px;">
+                                <i class="fas fa-wrench" style="color: #ff6b35; margin-right: 10px;"></i>
+                                Reparatie Bitumen Dak
+                            </h3>
+                            <p style="color: #666; line-height: 1.6;">
+                                Heeft u te maken met beschadigingen of lekkages? Onze dakdekkers staan klaar om uw dak snel en efficiënt te repareren. Van kleine scheuren tot grotere problemen.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div>
+                        <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #ff6b35;">
+                            <h3 style="font-size: 22px; color: #1a2332; margin-bottom: 15px;">
+                                <i class="fas fa-search" style="color: #ff6b35; margin-right: 10px;"></i>
+                                Inspectie & Advies
+                            </h3>
+                            <p style="color: #666; line-height: 1.6;">
+                                Niet zeker of bitumen de juiste keuze is? We inspecteren uw dak gratis en adviseren over de beste oplossing voor uw specifieke situatie.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div>
+                        <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #ff6b35;">
+                            <h3 style="font-size: 22px; color: #1a2332; margin-bottom: 15px;">
+                                <i class="fas fa-clock" style="color: #ff6b35; margin-right: 10px;"></i>
+                                Onderhoud
+                            </h3>
+                            <p style="color: #666; line-height: 1.6;">
+                                Regelmatig onderhoud verlengt de levensduur van uw bitumen dak. We bieden onderhoudscontracten voor zorgeloos dakbeheer.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section style="width: 100%; background: #f8f9fa; padding: 120px 0; margin: 0;">
+            <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+                
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <h2 style="font-size: 36px; color: #1a2332; margin-bottom: 20px;">Hoe We Werken</h2>
+                    <p style="font-size: 18px; color: #666;">Van eerste contact tot oplevering</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+                    
+                    <!-- Step 1 -->
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px; font-weight: 700; color: #fff;">
+                            1
+                        </div>
+                        <h3 style="font-size: 20px; color: #1a2332; margin-bottom: 10px;">Contact</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 15px;">
+                            U neemt contact met ons op via telefoon, email of het contactformulier
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px; font-weight: 700; color: #fff;">
+                            2
+                        </div>
+                        <h3 style="font-size: 20px; color: #1a2332; margin-bottom: 10px;">Inspectie</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 15px;">
+                            We komen langs voor een gratis inspectie en advies op locatie
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px; font-weight: 700; color: #fff;">
+                            3
+                        </div>
+                        <h3 style="font-size: 20px; color: #1a2332; margin-bottom: 10px;">Offerte</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 15px;">
+                            Binnen 24 uur ontvangt u een duidelijke offerte zonder verrassingen
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px; font-weight: 700; color: #fff;">
+                            4
+                        </div>
+                        <h3 style="font-size: 20px; color: #1a2332; margin-bottom: 10px;">Uitvoering</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 15px;">
+                            Na akkoord starten we snel met de vakkundige uitvoering van het werk
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="width: 100%; background: #1a2332; padding: 100px 0; margin: 0;">
+            <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box; text-align: center;">
+                <h2 style="color: #fff; font-size: 36px; margin-bottom: 20px;">Bitumen Dak Nodig?</h2>
+                <p style="color: #fff; font-size: 18px; margin-bottom: 40px;">
+                    Neem contact op voor een gratis inspectie en offerte binnen 24 uur
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" style="display: inline-block; background: #ff6b35; color: #fff; padding: 18px 40px; text-decoration: none; font-size: 18px; font-weight: 600; border-radius: 5px;">
+                        Vraag Offerte Aan
+                    </a>
+                    <a href="tel:+31623313469" style="display: inline-block; background: transparent; color: #fff; padding: 18px 40px; text-decoration: none; font-size: 18px; font-weight: 600; border-radius: 5px; border: 2px solid #fff;">
+                        <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>
+                        Bel Direct
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+            <div class="footer-section">
+                <h3>Zaandak</h3>
+                <p>Professionele dakdekker in Zaandam en omgeving. Uw dak, onze zorg.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                    <a href="tel:+31623313469" aria-label="Bel ons op +31 6 23313469">+31 (06) 23313469</a>
+                </p>
+                <p>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <a href="mailto:info@zaandak.nl" aria-label="Email ons">info@zaandak.nl</a>
+                </p>
+                <p>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    Zaandam, Nederland
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Diensten</h3>
+                <p><a href="#dakpannen">Dakpannen vervangen</a></p>
+                <p><a href="#nokvorst">Nokvorst herstel</a></p>
+                <p><a href="#loodwerk">Loodwerk</a></p>
+                         <p><a href="#bitumen">Bitumen daken</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Openingstijden</h3>
+                <p>Ma - Vr: 08:00 - 17:00</p>
+                <p>Za - Zo: Gesloten</p>a - Vr: 08:00 - 17:00</p>
+                <p>Za - Zo: Gesloten</p>
