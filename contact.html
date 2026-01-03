@@ -435,7 +435,7 @@
                             <i class="fas fa-envelope" style="color: #fff; font-size: 32px;"></i>
                         </div>
                         <h3 style="font-size: 24px; color: #1a2332; margin-bottom: 15px;">Email</h3>
-                        <a href="mailto:info@zaandak.nl" style="color: #ff6b35; font-size: 18px; text-decoration: none; font-weight: 600;">info@zaandak.nl</a>
+                        <a href="/cdn-cgi/l/email-protection#167f787079566c77777872777d38787a" style="color: #ff6b35; font-size: 18px; text-decoration: none; font-weight: 600;"><span class="__cf_email__" data-cfemail="caa3a4aca58ab0ababa4aeaba1e4a4a6">[email&#160;protected]</span></a>
                         <p style="color: #666; margin-top: 10px; font-size: 14px;">Reactie binnen 24 uur</p>
                     </div>
 
@@ -487,8 +487,7 @@
                                 <option value="bitumen">Bitumen dakbedekking</option>
                                 <option value="zinkwerk">Zinkwerk</option>
                                 <option value="loodwerk">Loodwerk</option>
-                                <option value="dakisolatie">Dakisolatie</option>
-                                <option value="nokvorst">Nokvorst herstel</option>
+                              ption>
                                 <option value="anders">Anders</option>
                             </select>
                         </div>
@@ -555,11 +554,36 @@
             
             <div class="footer-section">
                 <h3>Diensten</h3>
-                <p><a href="#dakpannen">Dakpannen vervangen</a></p>
-                <p><a href="#nokvorst">Nokvorst herstel</a></p>
-                <p><a href="#loodwerk">Loodwerk</a></p>
-                         <p><a href="#bitumen">Bitumen daken</a></p>
+                <p><a href="index.html#diensten">Dakpannen vervangen</a></p>
+                <p><a href="index.html#diensten">Nokvorst herstel</a></p>
+                <p><a href="index.html#diensten">Loodwerk</a></p>
+                <p><a href="bitumen-dakbedekking.html">Bitumen daken</a></p>
             </div>
             
             <div class="footer-section">
+                <h3>Openingstijden</h3>
+                <p>Ma - Vr: 08:00 - 17:00</p>
+                <p>Za - Zo: Gesloten</p>
+            </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zaandak. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
     
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .catch(() => {});
+            });
+        }
+    </script>
+</body>
+</html>

@@ -46,6 +46,8 @@
             }
         }
     </style>
+    
+    <style>
     /* Page-specific mobile responsive */
     @media (max-width: 992px) {
         section > div { padding: 0 20px !important; }
@@ -62,6 +64,7 @@
         h1 { font-size: 28px !important; }
         h2 { font-size: 24px !important; }
     }
+    </style>
     
     <!-- DNS Prefetch & Preconnect for Performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -666,8 +669,36 @@
             
             <div class="footer-section">
                 <h3>Diensten</h3>
-                <p><a href="#dakpannen">Dakpannen vervangen</a></p>
-                <p><a href="#nokvorst">Nokvorst herstel</a></p>
-                <p><a href="#loodwerk">Loodwerk</a></p>
-                         <p><a href="#bitumen">Bitumen daken</a></p>
-           
+                <p><a href="index.html#diensten">Dakpannen vervangen</a></p>
+                <p><a href="index.html#diensten">Nokvorst herstel</a></p>
+                <p><a href="index.html#diensten">Loodwerk</a></p>
+                <p><a href="bitumen-dakbedekking.html">Bitumen daken</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Openingstijden</h3>
+                <p>Ma - Vr: 08:00 - 17:00</p>
+                <p>Za - Zo: Gesloten</p>
+            </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zaandak. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .catch(() => {});
+            });
+        }
+    </script>
+</body>
+</html>
