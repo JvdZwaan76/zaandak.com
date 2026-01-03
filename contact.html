@@ -10,60 +10,39 @@
     
     <!-- Mobile Responsive Overrides -->
     <style>
-        /* Mobile optimization for services section */
+        /* Mobile optimization */
         @media (max-width: 992px) {
-            #diensten > div {
+            section > div {
                 padding: 0 20px !important;
-            }
-            #diensten > div > div:last-child {
-                grid-template-columns: 1fr !important;
-                gap: 30px !important;
             }
         }
         
         @media (max-width: 768px) {
-            #diensten {
+            section {
                 padding: 80px 0 !important;
             }
-            .service-card {
-                margin: 0 !important;
+            h1 {
+                font-size: 36px !important;
+            }
+            h2 {
+                font-size: 28px !important;
             }
         }
         
         @media (max-width: 480px) {
-            #diensten {
+            section {
                 padding: 60px 0 !important;
             }
-            #diensten > div {
+            section > div {
                 padding: 0 15px !important;
-                max-width: 100% !important;
             }
-            .section-header {
-                margin-bottom: 40px !important;
+            h1 {
+                font-size: 28px !important;
             }
-            .service-card {
-                padding: 20px !important;
+            h2 {
+                font-size: 24px !important;
             }
         }
-    </style>
-    
-    <style>
-    /* Page-specific mobile responsive */
-    @media (max-width: 992px) {
-        section > div { padding: 0 20px !important; }
-        section > div > div { grid-template-columns: 1fr !important; }
-    }
-    @media (max-width: 768px) {
-        section { padding: 80px 0 !important; }
-        h1 { font-size: 36px !important; }
-        h2 { font-size: 28px !important; }
-    }
-    @media (max-width: 480px) {
-        section { padding: 60px 0 !important; }
-        section > div { padding: 0 15px !important; }
-        h1 { font-size: 28px !important; }
-        h2 { font-size: 24px !important; }
-    }
     </style>
     
     <!-- DNS Prefetch & Preconnect for Performance -->
@@ -76,282 +55,67 @@
     
     <!-- Primary SEO Meta Tags -->
     <title>Contact | Gratis Offerte Aanvragen | Zaandak</title>
-    <meta name="title" content="Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk | Zaandak">
+    <meta name="title" content="Contact | Gratis Offerte Aanvragen | Zaandak">
     <meta name="description" content="✓ Neem contact op met Zaandak ✓ Gratis offerte binnen 24 uur ✓ Telefonisch, email of formulier ✓ Dakdekker Zaandam ✓ +31 (06) 23313469">
-    <meta name="keywords" content="dakdekker zaandam, dakpannen vervangen zaandam, bitumen dak zaandam, loodwerk dakdekker, nokvorst herstel, dakreparatie zaandam, dakisolatie, zinkwerk, dakrenovatie, dakonderhoud zaandam, dakdekker noord-holland">
+    <meta name="keywords" content="dakdekker zaandam contact, offerte dakdekker, dakpannen vervangen zaandam, bitumen dak zaandam">
     <meta name="author" content="Zaandak">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta name="bingbot" content="index, follow">
-    <meta name="language" content="nl">
-    <meta name="revisit-after" content="7 days">
-    <meta name="rating" content="general">
-    
-    <!-- Geographic Meta Tags -->
-    <meta name="geo.region" content="NL-NH">
-    <meta name="geo.placename" content="Zaandam">
-    <meta name="geo.position" content="52.4388;4.8264">
-    <meta name="ICBM" content="52.4388, 4.8264">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://zaandak.com/">
-    <meta property="og:title" content="Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk | Zaandak">
-    <meta property="og:description" content="✓ Professionele dakdekker in Zaandam ✓ 20+ jaar ervaring ✓ Dakpannen vervangen ✓ Bitumen daken ✓ Loodwerk ✓ Nokvorst herstel ✓ Gratis offerte">
+    <meta property="og:url" content="https://zaandak.com/contact.html">
+    <meta property="og:title" content="Contact | Zaandak Dakdekkers">
+    <meta property="og:description" content="✓ Neem contact op met Zaandak ✓ Gratis offerte binnen 24 uur">
     <meta property="og:image" content="https://zaandak.com/images/Dakpannen-Vervangen-Zaandam.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Professionele dakdekker in Zaandam aan het werk">
-    <meta property="og:locale" content="nl_NL">
-    <meta property="og:site_name" content="Zaandak">
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://zaandak.com/">
-    <meta name="twitter:title" content="Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk">
-    <meta name="twitter:description" content="✓ Professionele dakdekker in Zaandam ✓ 20+ jaar ervaring ✓ Gratis offerte binnen 24 uur">
-    <meta name="twitter:image" content="https://zaandak.com/images/Dakpannen-Vervangen-Zaandam.webp">
-    <meta name="twitter:image:alt" content="Professionele dakdekker in Zaandam">
-    
-    <!-- Canonical & Alternate -->
+    <!-- Canonical -->
     <link rel="canonical" href="https://zaandak.com/contact.html">
-    <link rel="alternate" hreflang="nl" href="https://zaandak.com/">
-    <link rel="alternate" hreflang="nl-NL" href="https://zaandak.com/">
-    <link rel="alternate" hreflang="x-default" href="https://zaandak.com/">
     
     <!-- Google Fonts - Optimized Loading -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Font Awesome - Optimized Loading -->
+    <!-- Font Awesome -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" media="print" onload="this.media='all'; this.onload=null;">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     
-    <!-- Critical CSS - Inline for Fast First Paint -->
+    <!-- Critical CSS -->
     <style>
-        /* Critical above-the-fold styles */
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Poppins',sans-serif;color:#2d3748;line-height:1.6;overflow-x:hidden;background:#fff}
         .top-bar{background:#1a2332;color:#fff;padding:12px 0;font-size:14px}
         .container{max-width:1400px;margin:0 auto;padding:0 20px;width:100%}
         header{background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
-        .header-content{max-width:1400px;margin:0 auto;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;min-height:80px}
-        .logo{height:50px;width:auto}
-        nav{display:flex;gap:30px;align-items:center}
-        nav a{color:#2d3748;text-decoration:none;font-weight:500;font-size:15px;transition:color .3s}
-        nav a:hover{color:#ff6b35}
-        .hero-slider{position:relative;width:100%;height:600px;overflow:hidden}
-        .slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1.5s}
-        .slide.active{opacity:1}
-        .slide-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,35,50,.85),rgba(255,107,53,.7));display:flex;align-items:center;justify-content:center}
-        .slide-content{text-align:center;color:#fff;max-width:1200px;margin:0 auto;padding:40px}
-        .slide-title{font-size:56px;font-weight:800;margin-bottom:30px;line-height:1.2}
-        .cta-button{background:#ff6b35;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:600;font-size:14px;transition:all .3s;display:inline-block;margin-top:20px}
     </style>
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="css/styles.css?v=3" as="style">
     <link rel="preload" href="js/script.js" as="script">
-    <link rel="preload" href="images/logo.svg" as="image">
     
-    <!-- Main Stylesheet - Deferred -->
-    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'; this.onload=null;">
-    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css?v=3">
     
-    <!-- Favicon & App Icons -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1a2332">
-    
-    <!-- Structured Data / Schema.org - Enhanced for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://zaandak.com/#localbusiness",
-          "name": "Zaandak",
-          "alternateName": "Zaandak Dakdekkers",
-          "description": "Professionele dakdekker in Zaandam en omgeving. Specialist in dakpannen, bitumen, loodwerk en nokvorst herstel met 20+ jaar ervaring.",
-          "url": "https://zaandak.com",
-          "telephone": "+31623313469",
-          "email": "info@zaandak.nl",
-          "priceRange": "€€",
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://zaandak.com/images/Dakpannen-Vervangen-Zaandam.webp",
-            "width": 1200,
-            "height": 630
-          },
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://zaandak.com/images/logo.svg",
-            "width": 200,
-            "height": 50
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Zaandam",
-            "addressRegion": "Noord-Holland",
-            "postalCode": "1500",
-            "addressCountry": "NL"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "52.4388",
-            "longitude": "4.8264"
-          },
-          "areaServed": [
-            {
-              "@type": "City",
-              "name": "Zaandam"
-            },
-            {
-              "@type": "City",
-              "name": "Amsterdam"
-            },
-            {
-              "@type": "City",
-              "name": "Zaanstad"
-            },
-            {
-              "@type": "State",
-              "name": "Noord-Holland"
-            }
-          ],
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-              "opens": "08:00",
-              "closes": "17:00"
-            }
-          ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "127",
-            "bestRating": "5",
-            "worstRating": "1"
-          },
-          "sameAs": []
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://zaandak.com/#website",
-          "url": "https://zaandak.com",
-          "name": "Zaandak",
-          "description": "Professionele dakdekker in Zaandam",
-          "publisher": {
-            "@id": "https://zaandak.com/#localbusiness"
-          },
-          "inLanguage": "nl-NL"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://zaandak.com/#webpage",
-          "url": "https://zaandak.com",
-          "name": "Dakdekker Zaandam | Dakpannen, Bitumen & Loodwerk | Zaandak",
-          "isPartOf": {
-            "@id": "https://zaandak.com/#website"
-          },
-          "about": {
-            "@id": "https://zaandak.com/#localbusiness"
-          },
-          "description": "Professionele dakdekker in Zaandam met 20+ jaar ervaring. Specialist in dakpannen vervangen, bitumen daken, loodwerk en nokvorst herstel.",
-          "inLanguage": "nl-NL"
-        },
-        {
-          "@type": "Service",
-          "@id": "https://zaandak.com/#service-dakpannen",
-          "serviceType": "Dakpannen vervangen",
-          "provider": {
-            "@id": "https://zaandak.com/#localbusiness"
-          },
-          "areaServed": {
-            "@type": "City",
-            "name": "Zaandam"
-          },
-          "description": "Deskundige installatie en onderhoud van dakpannen, met de garantie van langdurige kwaliteit en een aantrekkelijk uiterlijk."
-        },
-        {
-          "@type": "Service",
-          "@id": "https://zaandak.com/#service-nokvorst",
-          "serviceType": "Nokvorst herstel",
-          "provider": {
-            "@id": "https://zaandak.com/#localbusiness"
-          },
-          "areaServed": {
-            "@type": "City",
-            "name": "Zaandam"
-          },
-          "description": "Voorkomt lekkages en beschermt uw dak door beschadigde nokvorsten te vervangen of te repareren."
-        },
-        {
-          "@type": "Service",
-          "@id": "https://zaandak.com/#service-loodwerk",
-          "serviceType": "Loodwerk",
-          "provider": {
-            "@id": "https://zaandak.com/#localbusiness"
-          },
-          "areaServed": {
-            "@type": "City",
-            "name": "Zaandam"
-          },
-          "description": "Loodwerk zorgt voor waterdichte aansluitingen en langdurige bescherming tegen lekkages."
-        },
-        {
-          "@type": "Service",
-          "@id": "https://zaandak.com/#service-bitumen",
-          "serviceType": "Bitumen daken",
-          "provider": {
-            "@id": "https://zaandak.com/#localbusiness"
-          },
-          "areaServed": {
-            "@type": "City",
-            "name": "Zaandam"
-          },
-          "description": "Onze service voor het branden van bitumen daken zorgt voor een waterdichte en duurzame afwerking."
-        },
-        {
-          "@type": "BreadcrumbList",
-          "@id": "https://zaandak.com/#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://zaandak.com/"
-            }
-          ]
-        }
-      ]
-    }
-    </script>
 </head>
 
 <body>
-    <!-- Skip to Main Content (Accessibility) -->
-    <a href="#diensten" class="skip-to-main">Spring naar hoofdinhoud</a>
-    
-    <!-- Screen reader announcements -->
-    <div class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-to-main">Spring naar hoofdinhoud</a>
     
     <!-- Top Bar -->
-    <div class="top-bar" role="complementary" aria-label="Contact informatie">
+    <div class="top-bar" role="complementary">
         <div class="container">
             <div class="top-bar-content">
                 <div class="top-bar-item">
-                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                    <a href="tel:+31623313469" aria-label="Bel ons op +31 6 23313469">+31 (06) 23313469</a>
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+31623313469">+31 (06) 23313469</a>
                 </div>
                 <div class="top-bar-item">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#87eee9e1e8c7fde6e6e9e3e6eca9e9eb" aria-label="Email ons"><span class="__cf_email__" data-cfemail="2f464149406f554e4e414b4e44014143">[email&#160;protected]</span></a>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
                 </div>
             </div>
         </div>
@@ -360,10 +124,8 @@
     <!-- Header -->
     <header id="header">
         <div class="header-content">
-            <!-- Logo -->
             <img src="images/logo.svg" alt="Zaandak Logo" class="logo">
             
-            <!-- Desktop Navigation -->
             <nav id="nav">
                 <a href="index.html">Home</a>
                 
@@ -384,7 +146,6 @@
                 <a href="contact.html" class="cta-button">Offerte aanvragen</a>
             </nav>
 
-            <!-- Mobile Menu Toggle -->
             <div class="mobile-toggle" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
@@ -395,141 +156,112 @@
 
     <!-- Main Content -->
     <main id="main-content" role="main">
-        <!-- Hero Slider -->
-        <section class="hero-slider" id="home" aria-label="Banner carousel">
-        <!-- Slide 1: Roof Repair -->
-        <div class="slide active" style="background-image: linear-gradient(rgba(26, 35, 50, 0.5), rgba(26, 35, 50, 0.5)), url('https://images.unsplash.com/photo-1632778630163-7d1f500ebf53?w=1920&q=80');">
-            <div class="slide-overlay">
-                <div class="slide-content animate">
-                    <p class="slide-subtitle">Uw dak, onze zorg</p>
-                    <h1 class="slide-title">Voor Een Perfect Afgewerkt Dak</h1>
-                    <a href="#contact" class="cta-button">Neem contact op</a>
-
-    <!-- Main Content -->
-    <main id="main-content" role="main">
         
-        <!-- Contact Hero Section -->
-        <section style="width: 100%; background: linear-gradient(rgba(26,35,50,0.8), rgba(26,35,50,0.8)), url('images/Dakpannen-Vervangen-Zaandam.webp'); background-size: cover; background-position: center; padding: 180px 0 120px; margin: 0;">
-            <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box; text-align: center;">
-                <h1 style="color: #fff; font-size: 48px; margin-bottom: 20px; font-weight: 700;">Neem Contact Op</h1>
-                <p style="color: #fff; font-size: 20px; max-width: 600px; margin: 0 auto;">Gratis offerte binnen 24 uur | Vrijblijvend advies</p>
+        <!-- Hero Section -->
+        <section class="page-hero" style="background-image: url('images/Dakpannen-Vervangen-Zaandam.webp');">
+            <div class="container">
+                <h1>Neem Contact Op</h1>
+                <p>Gratis offerte binnen 24 uur | Vrijblijvend advies</p>
             </div>
         </section>
 
         <!-- Contact Information Section -->
-        <section style="width: 100%; background: #fff; padding: 120px 0; margin: 0;">
-            <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 80px;">
-                    
+        <section class="content-section">
+            <div class="container">
+                <div class="contact-cards">
                     <!-- Phone -->
-                    <div style="text-align: center; padding: 40px; background: #f8f9fa; border-radius: 8px;">
-                        <div style="width: 80px; height: 80px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <i class="fas fa-phone-alt" style="color: #fff; font-size: 32px;"></i>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone-alt"></i>
                         </div>
-                        <h3 style="font-size: 24px; color: #1a2332; margin-bottom: 15px;">Telefoon</h3>
-                        <a href="tel:+31623313469" style="color: #ff6b35; font-size: 18px; text-decoration: none; font-weight: 600;">+31 (06) 23313469</a>
-                        <p style="color: #666; margin-top: 10px; font-size: 14px;">Ma-Vr: 08:00 - 17:00</p>
+                        <h3>Telefoon</h3>
+                        <a href="tel:+31623313469">+31 (06) 23313469</a>
+                        <p>Ma-Vr: 08:00 - 17:00</p>
                     </div>
 
                     <!-- Email -->
-                    <div style="text-align: center; padding: 40px; background: #f8f9fa; border-radius: 8px;">
-                        <div style="width: 80px; height: 80px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <i class="fas fa-envelope" style="color: #fff; font-size: 32px;"></i>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        <h3 style="font-size: 24px; color: #1a2332; margin-bottom: 15px;">Email</h3>
-                        <a href="/cdn-cgi/l/email-protection#167f787079566c77777872777d38787a" style="color: #ff6b35; font-size: 18px; text-decoration: none; font-weight: 600;"><span class="__cf_email__" data-cfemail="caa3a4aca58ab0ababa4aeaba1e4a4a6">[email&#160;protected]</span></a>
-                        <p style="color: #666; margin-top: 10px; font-size: 14px;">Reactie binnen 24 uur</p>
+                        <h3>Email</h3>
+                        <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
+                        <p>Reactie binnen 24 uur</p>
                     </div>
 
                     <!-- Location -->
-                    <div style="text-align: center; padding: 40px; background: #f8f9fa; border-radius: 8px;">
-                        <div style="width: 80px; height: 80px; background: #ff6b35; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                            <i class="fas fa-map-marker-alt" style="color: #fff; font-size: 32px;"></i>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <h3 style="font-size: 24px; color: #1a2332; margin-bottom: 15px;">Locatie</h3>
-                        <p style="color: #666; font-size: 16px;">Zaandam, Nederland</p>
-                        <p style="color: #666; margin-top: 10px; font-size: 14px;">Hele regio Zaanstreek</p>
+                        <h3>Locatie</h3>
+                        <p style="color: #666; font-size: 16px; font-weight: 600;">Zaandam, Nederland</p>
+                        <p>Hele regio Zaanstreek</p>
                     </div>
-
                 </div>
 
                 <!-- Contact Form -->
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <div style="text-align: center; margin-bottom: 60px;">
-                        <h2 style="font-size: 36px; color: #1a2332; margin-bottom: 20px;">Vraag een Offerte Aan</h2>
-                        <p style="font-size: 18px; color: #666;">Vul het formulier in en ontvang binnen 24 uur een gratis offerte</p>
+                <div class="contact-form-wrapper">
+                    <div class="contact-form-header">
+                        <h2>Vraag een Offerte Aan</h2>
+                        <p>Vul het formulier in en ontvang binnen 24 uur een gratis offerte</p>
                     </div>
 
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="background: #f8f9fa; padding: 50px; border-radius: 8px;">
-                        
-                        <div style="margin-bottom: 25px;">
-                            <label for="name" style="display: block; font-size: 16px; color: #1a2332; margin-bottom: 8px; font-weight: 600;">Naam *</label>
-                            <input type="text" id="name" name="name" required 
-                                   style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Naam *</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
 
-                        <div style="margin-bottom: 25px;">
-                            <label for="email" style="display: block; font-size: 16px; color: #1a2332; margin-bottom: 8px; font-weight: 600;">Email *</label>
-                            <input type="email" id="email" name="email" required 
-                                   style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
 
-                        <div style="margin-bottom: 25px;">
-                            <label for="phone" style="display: block; font-size: 16px; color: #1a2332; margin-bottom: 8px; font-weight: 600;">Telefoon *</label>
-                            <input type="tel" id="phone" name="phone" required 
-                                   style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box;">
+                        <div class="form-group">
+                            <label for="phone">Telefoon *</label>
+                            <input type="tel" id="phone" name="phone" required>
                         </div>
 
-                        <div style="margin-bottom: 25px;">
-                            <label for="service" style="display: block; font-size: 16px; color: #1a2332; margin-bottom: 8px; font-weight: 600;">Dienst</label>
-                            <select id="service" name="service" 
-                                    style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; background: #fff;">
+                        <div class="form-group">
+                            <label for="service">Dienst</label>
+                            <select id="service" name="service">
                                 <option value="">Kies een dienst</option>
                                 <option value="dakpannen">Dakpannen vervangen</option>
                                 <option value="bitumen">Bitumen dakbedekking</option>
-                                <option value="zinkwerk">Zinkwerk</option>
                                 <option value="loodwerk">Loodwerk</option>
-                              ption>
+                                <option value="nokvorst">Nokvorst herstel</option>
+                                <option value="isolatie">Dakisolatie</option>
+                                <option value="zinkwerk">Zinkwerk</option>
                                 <option value="anders">Anders</option>
                             </select>
                         </div>
 
-                        <div style="margin-bottom: 30px;">
-                            <label for="message" style="display: block; font-size: 16px; color: #1a2332; margin-bottom: 8px; font-weight: 600;">Bericht *</label>
-                            <textarea id="message" name="message" required rows="6" 
-                                      style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; box-sizing: border-box; resize: vertical;"></textarea>
+                        <div class="form-group">
+                            <label for="message">Bericht *</label>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
 
-                        <button type="submit" 
-                                style="width: 100%; background: #ff6b35; color: #fff; padding: 18px; border: none; border-radius: 5px; font-size: 18px; font-weight: 600; cursor: pointer; transition: background 0.3s;">
-                            Verstuur Aanvraag
-                        </button>
-
-                        <p style="text-align: center; color: #666; font-size: 14px; margin-top: 20px;">
-                            * Verplichte velden. We respecteren uw privacy en delen uw gegevens niet met derden.
-                        </p>
-
+                        <button type="submit" class="form-submit">Verstuur Aanvraag</button>
                     </form>
                 </div>
-
             </div>
         </section>
 
         <!-- WhatsApp CTA Section -->
-        <section style="width: 100%; background: #25D366; padding: 80px 0; margin: 0;">
-            <div style="width: 1400px; max-width: 90%; margin: 0 auto; padding: 0 40px; box-sizing: border-box; text-align: center;">
-                <h2 style="color: #fff; font-size: 36px; margin-bottom: 20px;">Direct contact via WhatsApp</h2>
-                <p style="color: #fff; font-size: 18px; margin-bottom: 30px;">Snel en gemakkelijk</p>
-                <a href="https://wa.me/31623313469" target="_blank" rel="noopener noreferrer"
-                   style="display: inline-block; background: #fff; color: #25D366; padding: 18px 40px; text-decoration: none; font-size: 18px; font-weight: 600; border-radius: 50px; transition: transform 0.3s;">
-                    <i class="fab fa-whatsapp" style="margin-right: 10px; font-size: 24px;"></i>
+        <section class="whatsapp-cta">
+            <div class="container">
+                <h2>Direct contact via WhatsApp</h2>
+                <p>Snel en gemakkelijk</p>
+                <a href="https://wa.me/31623313469" target="_blank" rel="noopener noreferrer" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i>
                     Chat via WhatsApp
                 </a>
             </div>
         </section>
 
     </main>
+
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
@@ -542,15 +274,15 @@
             <div class="footer-section">
                 <h3>Contact</h3>
                 <p>
-                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                    <a href="tel:+31623313469" aria-label="Bel ons op +31 6 23313469">+31 (06) 23313469</a>
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+31623313469">+31 (06) 23313469</a>
                 </p>
                 <p>
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#1f767179705f657e7e717b7e74317173" aria-label="Email ons"><span class="__cf_email__" data-cfemail="d3babdb5bc93a9b2b2bdb7b2b8fdbdbf">[email&#160;protected]</span></a>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
                 </p>
                 <p>
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <i class="fas fa-map-marker-alt"></i>
                     Zaandam, Nederland
                 </p>
             </div>
