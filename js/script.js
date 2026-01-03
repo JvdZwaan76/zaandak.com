@@ -16,11 +16,14 @@ let slideInterval;
  * @param {number} n - Slide index
  */
 function showSlide(n) {
+    // Safety check - return if no slides exist
+    if (slides.length === 0) return;
+    
     // Remove active class from all slides and dots
     slides.forEach(slide => {
         slide.classList.remove('active');
         const content = slide.querySelector('.slide-content');
-        content.classList.remove('animate');
+        if (content) content.classList.remove('animate');
     });
     dots.forEach(dot => dot.classList.remove('active'));
     
@@ -29,11 +32,12 @@ function showSlide(n) {
     
     // Add active class to current slide and dot
     slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
+    if (dots[currentSlide]) dots[currentSlide].classList.add('active');
     
     // Animate slide content
     setTimeout(() => {
-        slides[currentSlide].querySelector('.slide-content').classList.add('animate');
+        const content = slides[currentSlide].querySelector('.slide-content');
+        if (content) content.classList.add('animate');
     }, 100);
 }
 
@@ -75,6 +79,8 @@ function startAutoSlide() {
 // Initialize slider
 if (slides.length > 0) {
     startAutoSlide();
+} else {
+    console.log('ℹ️ No slider on this page');
 }
 
 // ============================================
