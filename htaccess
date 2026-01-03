@@ -1,0 +1,181 @@
+# .htaccess for zaandak.com
+# Performance & SEO Optimization
+
+# ======================================
+# HTTPS Redirect (Force SSL)
+# ======================================
+# Uncomment these lines if you have SSL certificate installed
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ======================================
+# WWW to non-WWW Redirect
+# ======================================
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.zaandak\.com [NC]
+RewriteRule ^(.*)$ https://zaandak.com/$1 [L,R=301]
+
+# ======================================
+# Browser Caching
+# ======================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  
+  # HTML
+  ExpiresByType text/html "access plus 1 hour"
+  
+  # Default
+  ExpiresDefault "access plus 1 month"
+</IfModule>
+
+# ======================================
+# Gzip Compression
+# ======================================
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML and fonts
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+
+  # Remove browser bugs (only needed for really old browsers)
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  Header append Vary User-Agent
+</IfModule>
+
+# ======================================
+# Security Headers
+# ======================================
+<IfModule mod_headers.c>
+  # Prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+  
+  # Prevent MIME type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # Enable XSS protection
+  Header always set X-XSS-Protection "1; mode=block"
+  
+  # Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Remove X-Powered-By header
+  Header unset X-Powered-By
+</IfModule>
+
+# ======================================
+# File Type Settings
+# ======================================
+<IfModule mod_mime.c>
+  # Proper MIME types
+  AddType application/javascript js
+  AddType text/css css
+  AddType image/svg+xml svg svgz
+  AddType image/webp webp
+  AddType font/woff woff
+  AddType font/woff2 woff2
+</IfModule>
+
+# ======================================
+# ETags (Entity Tags)
+# ======================================
+<IfModule mod_headers.c>
+  Header unset ETag
+</IfModule>
+FileETag None
+
+# ======================================
+# Custom Error Pages (Optional)
+# ======================================
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+
+# ======================================
+# Protect Sensitive Files
+# ======================================
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Protect .htaccess
+<Files .htaccess>
+  Order allow,deny
+  Deny from all
+</Files>
+
+# ======================================
+# Prevent Directory Browsing
+# ======================================
+Options -Indexes
+
+# ======================================
+# UTF-8 Encoding
+# ======================================
+AddDefaultCharset UTF-8
+
+# ======================================
+# Leverage Browser Caching (Alternative)
+# ======================================
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+  
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "max-age=3600, public, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ======================================
+# Clean URLs (Optional - Remove .html)
+# ======================================
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# ======================================
+# Redirect old URLs (if needed)
+# ======================================
+# Example: Redirect /old-page.html to /new-page.html
+# Redirect 301 /old-page.html https://zaandak.com/new-page.html

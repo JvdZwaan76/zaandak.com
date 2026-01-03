@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | Zaandak - Alle Pagina's Overzicht</title>
+    <meta name="description" content="Complete overzicht van alle pagina's op zaandak.com. Vind snel wat u zoekt.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zaandak.com/sitemap.html">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css?v=3">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    
+    <style>
+        .sitemap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .sitemap-section {
+            margin-bottom: 50px;
+        }
+        
+        .sitemap-section h2 {
+            color: #1a2332;
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ff6b35;
+        }
+        
+        .sitemap-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .sitemap-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #1a2332;
+            transition: all 0.3s ease;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .sitemap-link:hover {
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+        
+        .sitemap-link i {
+            color: #ff6b35;
+            font-size: 20px;
+            margin-right: 15px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .sitemap-link span {
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .sitemap-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .sitemap-intro h1 {
+            font-size: 42px;
+            color: #1a2332;
+            margin-bottom: 15px;
+        }
+        
+        .sitemap-intro p {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .sitemap-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+31623313469">+31 (06) 23313469</a>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <img src="images/logo.svg" alt="Zaandak Logo" class="logo">
+            
+            <nav id="nav">
+                <a href="index.html">Home</a>
+                
+                <div class="dropdown">
+                    <a href="index.html#diensten">Diensten</a>
+                    <div class="dropdown-content">
+                        <a href="bitumen-dakbedekking.html">Bitumen dakbedekking</a>
+                        <a href="dakpannen-vervangen.html">Dakpannen vervangen</a>
+                        <a href="zinkwerk.html">Zinkwerk</a>
+                        <a href="loodwerk.html">Lood werk</a>
+                        <a href="nokvorst-herstel.html">Nokvorst herstel</a>
+                        <a href="dakisolatie.html">Dakisolatie</a>
+                    </div>
+                </div>
+                
+                <a href="over-ons.html">Over ons</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="cta-button">Offerte aanvragen</a>
+            </nav>
+
+            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="sitemap-container">
+            
+            <div class="sitemap-intro">
+                <h1>Sitemap</h1>
+                <p>Alle pagina's van zaandak.com op een rijtje</p>
+            </div>
+
+            <!-- Main Pages Section -->
+            <div class="sitemap-section">
+                <h2>Hoofdpagina's</h2>
+                <div class="sitemap-links">
+                    <a href="index.html" class="sitemap-link">
+                        <i class="fas fa-home"></i>
+                        <span>Homepage</span>
+                    </a>
+                    <a href="over-ons.html" class="sitemap-link">
+                        <i class="fas fa-users"></i>
+                        <span>Over Ons</span>
+                    </a>
+                    <a href="contact.html" class="sitemap-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div class="sitemap-section">
+                <h2>Onze Diensten</h2>
+                <div class="sitemap-links">
+                    <a href="bitumen-dakbedekking.html" class="sitemap-link">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Bitumen Dakbedekking</span>
+                    </a>
+                    <a href="dakpannen-vervangen.html" class="sitemap-link">
+                        <i class="fas fa-th"></i>
+                        <span>Dakpannen Vervangen</span>
+                    </a>
+                    <a href="nokvorst-herstel.html" class="sitemap-link">
+                        <i class="fas fa-tools"></i>
+                        <span>Nokvorst Herstel</span>
+                    </a>
+                    <a href="loodwerk.html" class="sitemap-link">
+                        <i class="fas fa-hammer"></i>
+                        <span>Loodwerk</span>
+                    </a>
+                    <a href="zinkwerk.html" class="sitemap-link">
+                        <i class="fas fa-square"></i>
+                        <span>Zinkwerk</span>
+                    </a>
+                    <a href="dakisolatie.html" class="sitemap-link">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Dakisolatie</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="sitemap-section">
+                <h2>Extra Informatie</h2>
+                <div class="sitemap-links">
+                    <a href="sitemap.html" class="sitemap-link">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Sitemap (Deze pagina)</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+            <div class="footer-section">
+                <h3>Zaandak</h3>
+                <p>Professionele dakdekker in Zaandam en omgeving. Uw dak, onze zorg.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+31623313469">+31 (06) 23313469</a>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
+                </p>
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    Zaandam, Nederland
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Diensten</h3>
+                <p><a href="dakpannen-vervangen.html">Dakpannen vervangen</a></p>
+                <p><a href="nokvorst-herstel.html">Nokvorst herstel</a></p>
+                <p><a href="loodwerk.html">Loodwerk</a></p>
+                <p><a href="bitumen-dakbedekking.html">Bitumen daken</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Openingstijden</h3>
+                <p>Ma - Vr: 08:00 - 17:00</p>
+                <p>Za - Zo: Gesloten</p>
+            </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zaandak. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

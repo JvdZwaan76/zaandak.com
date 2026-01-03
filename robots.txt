@@ -1,5 +1,5 @@
 # robots.txt for zaandak.com
-# Allow all search engines to crawl the entire site
+# Updated: 2026-01-03
 
 User-agent: *
 Allow: /
@@ -7,9 +7,32 @@ Allow: /
 # Sitemap location
 Sitemap: https://zaandak.com/sitemap.xml
 
-# Optional: Disallow certain paths if needed in future
-# Disallow: /admin/
-# Disallow: /private/
+# Block access to specific directories
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
 
-# Crawl-delay (optional, helps prevent server overload)
-# Crawl-delay: 1
+# Allow CSS and JS for better rendering
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Crawl-delay (optional - adjust if needed)
+# Crawl-delay: 10
+
+# Specific rules for different bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
