@@ -115,7 +115,7 @@
                 </div>
                 <div class="top-bar-item">
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
+                    <a href="/cdn-cgi/l/email-protection#b9d0d7dfd6f9c3d8d8d7ddd8d297d7d5"><span class="__cf_email__" data-cfemail="553c3b333a152f34343b31343e7b3b39">[email&#160;protected]</span></a>
                 </div>
             </div>
         </div>
@@ -207,7 +207,7 @@
                         <p>Vul het formulier in en ontvang binnen 24 uur een gratis offerte</p>
                     </div>
 
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+                    <form id="contactForm" action="contact-handler.php" method="POST" class="contact-form">
                         <div class="form-group">
                             <label for="name">Naam *</label>
                             <input type="text" id="name" name="name" required>
@@ -220,7 +220,7 @@
 
                         <div class="form-group">
                             <label for="phone">Telefoon *</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <input type="tel" id="phone" name="phone" required placeholder="+31 6 12345678">
                         </div>
 
                         <div class="form-group">
@@ -239,12 +239,84 @@
 
                         <div class="form-group">
                             <label for="message">Bericht *</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Vertel ons over uw project..."></textarea>
                         </div>
 
-                        <button type="submit" class="form-submit">Verstuur Aanvraag</button>
+                        <div id="formMessage" style="display: none; padding: 15px; margin-bottom: 20px; border-radius: 5px;"></div>
+
+                        <button type="submit" class="form-submit" id="submitBtn">
+                            <span id="btnText">Verstuur Aanvraag</span>
+                            <span id="btnLoader" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Verzenden...
+                            </span>
+                        </button>
                     </form>
                 </div>
+
+                <script>
+                // Contact form AJAX submission
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const form = this;
+                    const formData = new FormData(form);
+                    const submitBtn = document.getElementById('submitBtn');
+                    const btnText = document.getElementById('btnText');
+                    const btnLoader = document.getElementById('btnLoader');
+                    const formMessage = document.getElementById('formMessage');
+                    
+                    // Disable submit button
+                    submitBtn.disabled = true;
+                    btnText.style.display = 'none';
+                    btnLoader.style.display = 'inline';
+                    
+                    // Hide previous messages
+                    formMessage.style.display = 'none';
+                    
+                    // Submit form via AJAX
+                    fetch('contact-handler.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Show message
+                        formMessage.style.display = 'block';
+                        formMessage.textContent = data.message;
+                        
+                        if (data.success) {
+                            formMessage.style.background = '#d4edda';
+                            formMessage.style.color = '#155724';
+                            formMessage.style.border = '1px solid #c3e6cb';
+                            form.reset(); // Clear form
+                        } else {
+                            formMessage.style.background = '#f8d7da';
+                            formMessage.style.color = '#721c24';
+                            formMessage.style.border = '1px solid #f5c6cb';
+                        }
+                        
+                        // Re-enable submit button
+                        submitBtn.disabled = false;
+                        btnText.style.display = 'inline';
+                        btnLoader.style.display = 'none';
+                        
+                        // Scroll to message
+                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    })
+                    .catch(error => {
+                        formMessage.style.display = 'block';
+                        formMessage.style.background = '#f8d7da';
+                        formMessage.style.color = '#721c24';
+                        formMessage.style.border = '1px solid #f5c6cb';
+                        formMessage.textContent = 'Er is iets misgegaan. Probeer het opnieuw of bel ons op +31 (06) 23313469';
+                        
+                        // Re-enable submit button
+                        submitBtn.disabled = false;
+                        btnText.style.display = 'inline';
+                        btnLoader.style.display = 'none';
+                    });
+                });
+                </script>
             </div>
         </section>
 
@@ -279,7 +351,7 @@
                 </p>
                 <p>
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
+                    <a href="/cdn-cgi/l/email-protection#dcb5b2bab39ca6bdbdb2b8bdb7f2b2b0"><span class="__cf_email__" data-cfemail="f59c9b939ab58f94949b91949edb9b99">[email&#160;protected]</span></a>
                 </p>
                 <p>
                     <i class="fas fa-map-marker-alt"></i>
@@ -306,19 +378,4 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Zaandak. Alle rechten voorbehouden.</p>
         </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
-    
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .catch(() => {});
-            });
-        }
-    </script>
-</body>
-</html>
+    </f
