@@ -1,21 +1,106 @@
 {
-  "name": "Zaandak - Professionele Dakdekker",
+  "name": "Zaandak - Professionele Dakdekker Zaandam",
   "short_name": "Zaandak",
-  "description": "Professionele dakdekker in Zaandam en omgeving. Specialist in dakpannen, bitumen, loodwerk en nokvorst herstel.",
+  "description": "Professionele dakdekker in Zaandam. Dakpannen vervangen, bitumen dakbedekking, loodwerk, nokvorst herstel en meer. 20+ jaar ervaring.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#1a2332",
   "theme_color": "#1a2332",
-  "orientation": "portrait-primary",
+  "lang": "nl",
+  "dir": "ltr",
+  "categories": ["business", "construction"],
   "icons": [
     {
-      "src": "images/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "images/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "roofing", "construction"],
-  "lang": "nl",
-  "dir": "ltr"
+  "screenshots": [
+    {
+      "src": "images/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "images/screenshot-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Neem contact op met Zaandak",
+      "url": "/contact.html",
+      "icons": [
+        {
+          "src": "images/icon-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Offerte",
+      "short_name": "Offerte",
+      "description": "Vraag een gratis offerte aan",
+      "url": "/contact.html#contactForm",
+      "icons": [
+        {
+          "src": "images/icon-96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
 }

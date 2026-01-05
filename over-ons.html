@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Optimization -->
+    <meta name="theme-color" content="#1a2332">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Zaandak">
     
     <!-- Disable Cloudflare Email Obfuscation -->
     <meta name="cloudflare-email-obfuscation" content="off">
@@ -57,6 +64,41 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Zaandak",
+      "url": "https://zaandak.com",
+      "logo": "https://zaandak.com/images/logo.svg",
+      "description": "Professioneel dakdekkersbedrijf met meer dan 20 jaar ervaring in Zaandam en omgeving",
+      "telephone": "+31623313469",
+      "email": "info@zaandak.nl",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Zaandam",
+        "addressRegion": "Noord-Holland",
+        "postalCode": "1500",
+        "addressCountry": "NL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "52.4388",
+        "longitude": "4.8264"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Zaandam"
+      },
+      "sameAs": [
+        "https://zaandak.com"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -70,7 +112,7 @@
                 </div>
                 <div class="top-bar-item">
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
+                    <a href="/cdn-cgi/l/email-protection#c4adaaa2ab84bea5a5aaa0a5afeaaaa8"><span class="__cf_email__" data-cfemail="046d6a626b447e65656a60656f2a6a68">[email&#160;protected]</span></a>
                 </div>
             </div>
         </div>
@@ -300,7 +342,7 @@
                 </p>
                 <p>
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
+                    <a href="/cdn-cgi/l/email-protection#2a43444c456a504b4b444e4b41044446"><span class="__cf_email__" data-cfemail="7f161119103f051e1e111b1e14511113">[email&#160;protected]</span></a>
                 </p>
                 <p>
                     <i class="fas fa-map-marker-alt"></i>
@@ -321,13 +363,4 @@
                 <p>Ma - Vr: 08:00 - 17:00</p>
                 <p>Za - Zo: Gesloten</p>
             </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Zaandak. Alle rechten voorbehouden.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd7
+       

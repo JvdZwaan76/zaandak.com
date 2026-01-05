@@ -99,6 +99,55 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Zaandak",
+      "description": "Professionele dakdekker in Zaandam met meer dan 20 jaar ervaring",
+      "url": "https://zaandak.com",
+      "telephone": "+31623313469",
+      "email": "info@zaandak.nl",
+      "priceRange": "€€",
+      "image": "https://zaandak.com/images/logo.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Zaandam",
+        "addressRegion": "Noord-Holland",
+        "postalCode": "1500",
+        "addressCountry": "NL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "52.4388",
+        "longitude": "4.8264"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Zaandam"
+      },
+      "sameAs": [
+        "https://zaandak.com"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -185,7 +234,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3>Email</h3>
-                        <a href="mailto:info@zaandak.nl">info@zaandak.nl</a>
+                        <a href="/cdn-cgi/l/email-protection#01686f676e417b60606f65606a2f6f6d"><span class="__cf_email__" data-cfemail="21484f474e615b40404f45404a0f4f4d">[email&#160;protected]</span></a>
                         <p>Reactie binnen 24 uur</p>
                     </div>
 
@@ -253,7 +302,7 @@
                     </form>
                 </div>
 
-                <script>
+                <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
                 // Contact form AJAX submission
                 document.getElementById('contactForm').addEventListener('submit', function(e) {
                     e.preventDefault();
@@ -369,13 +418,4 @@
             
             <div class="footer-section">
                 <h3>Openingstijden</h3>
-                <p>Ma - Vr: 08:00 - 17:00</p>
-                <p>Za - Zo: Gesloten</p>
-            </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 Zaandak. Alle rechten voorbehouden.</p>
-        </div>
-    </f
+                <p>Ma - Vr: 08:00 - 17:
