@@ -142,13 +142,6 @@
         nav{display:flex;gap:30px;align-items:center}
         nav a{color:#2d3748;text-decoration:none;font-weight:500;font-size:15px;transition:color .3s}
         nav a:hover{color:#ff6b35}
-        .hero-slider{position:relative;width:100%;height:600px;overflow:hidden}
-        .slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1.5s}
-        .slide.active{opacity:1}
-        .slide-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(26,35,50,.85),rgba(255,107,53,.7));display:flex;align-items:center;justify-content:center}
-        .slide-content{text-align:center;color:#fff;max-width:1200px;margin:0 auto;padding:40px}
-        .slide-title{font-size:56px;font-weight:800;margin-bottom:30px;line-height:1.2}
-        .cta-button{background:#ff6b35;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:600;font-size:14px;transition:all .3s;display:inline-block;margin-top:20px}
     </style>
     
     <!-- Preload Critical Resources -->
@@ -351,7 +344,7 @@
                 </div>
                 <div class="top-bar-item">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#cfa6a1a9a08fb5aeaea1abaea4e1a1a3" aria-label="Email ons"><span class="__cf_email__" data-cfemail="f39a9d959cb38992929d979298dd9d9f">[email&#160;protected]</span></a>
+                    <a href="mailto:info@zaandak.nl" aria-label="Email ons">info@zaandak.nl</a>
                 </div>
             </div>
         </div>
@@ -364,18 +357,18 @@
             <img src="images/logo.svg" alt="Zaandak Logo" class="logo">
             
             <!-- Desktop Navigation -->
-            <nav id="nav">
+            <nav id="nav" role="navigation" aria-label="Hoofdnavigatie">
                 <a href="index.html">Home</a>
                 
                 <div class="dropdown">
                     <a href="index.html#diensten">Diensten</a>
-                    <div class="dropdown-content">
-                        <a href="bitumen-dakbedekking.html">Bitumen dakbedekking</a>
-                        <a href="index.html#diensten">Dakpannen vervangen</a>
-                        <a href="index.html#diensten">Zinkwerk</a>
-                        <a href="index.html#diensten">Lood werk</a>
-                        <a href="index.html#diensten">Nokvorst herstel</a>
-                        <a href="index.html#diensten">Dakisolatie</a>
+                    <div class="dropdown-content" role="menu">
+                        <a href="bitumen-dakbedekking.html" role="menuitem">Bitumen dakbedekking</a>
+                        <a href="index.html#diensten" role="menuitem">Dakpannen vervangen</a>
+                        <a href="index.html#diensten" role="menuitem">Zinkwerk</a>
+                        <a href="index.html#diensten" role="menuitem">Lood werk</a>
+                        <a href="index.html#diensten" role="menuitem">Nokvorst herstel</a>
+                        <a href="index.html#diensten" role="menuitem">Dakisolatie</a>
                     </div>
                 </div>
                 
@@ -385,25 +378,13 @@
             </nav>
 
             <!-- Mobile Menu Toggle -->
-            <div class="mobile-toggle" onclick="toggleMobileMenu()">
+            <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Menu" aria-expanded="false" aria-controls="nav">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
-
-    <!-- Main Content -->
-    <main id="main-content" role="main">
-        <!-- Hero Slider -->
-        <section class="hero-slider" id="home" aria-label="Banner carousel">
-        <!-- Slide 1: Roof Repair -->
-        <div class="slide active" style="background-image: linear-gradient(rgba(26, 35, 50, 0.5), rgba(26, 35, 50, 0.5)), url('https://images.unsplash.com/photo-1632778630163-7d1f500ebf53?w=1920&q=80');">
-            <div class="slide-overlay">
-                <div class="slide-content animate">
-                    <p class="slide-subtitle">Uw dak, onze zorg</p>
-                    <h1 class="slide-title">Voor Een Perfect Afgewerkt Dak</h1>
-                    <a href="#contact" class="cta-button">Neem contact op</a>
 
     <!-- Main Content -->
     <main id="main-content" role="main">
@@ -642,6 +623,7 @@
         </section>
 
     </main>
+    
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
@@ -659,7 +641,7 @@
                 </p>
                 <p>
                     <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <a href="/cdn-cgi/l/email-protection#dbb2b5bdb49ba1babab5bfbab0f5b5b7" aria-label="Email ons"><span class="__cf_email__" data-cfemail="d5bcbbb3ba95afb4b4bbb1b4befbbbb9">[email&#160;protected]</span></a>
+                    <a href="mailto:info@zaandak.nl" aria-label="Email ons">info@zaandak.nl</a>
                 </p>
                 <p>
                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
