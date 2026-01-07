@@ -1,232 +1,221 @@
 <?php
 /**
- * Contact Form Handler for Zaandak.com
- * Sends form submissions to info@zaandak.nl
+ * Contact Form Handler - Zaandak.com
+ * Handles contact form submissions with security and validation
+ * Version: 2.0
  */
 
-// Enable error reporting for debugging (disable in production)
+// Start session for CSRF protection (optional but recommended)
+session_start();
+
+// Enable error reporting for development (disable in production)
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
 
 // Set response header
 header('Content-Type: application/json');
 
-// Function to sanitize input
-function sanitize_input($data) {
+// Configuration
+$to_email = "info@zaandak.nl"; // ✅ VERIFY THIS EMAIL IS CORRECT AND MONITORED
+$from_email = "noreply@zaandak.nl"; // Should be from your domain
+$subject_prefix = "Nieuwe Offerte Aanvraag - Zaandak.com";
+
+// Rate limiting (simple file-based)
+$rate_limit_file = sys_get_temp_dir() . '/contact_rate_limit_' . md5($_SERVER['REMOTE_ADDR']);
+$rate_limit_time = 60; // seconds between submissions from same IP
+$max_attempts = 3; // max attempts per hour
+
+/**
+ * Send JSON response and exit
+ */
+function sendResponse($success, $message, $errors = []) {
+    echo json_encode([
+        'success' => $success,
+        'message' => $message,
+        'errors' => $errors
+    ]);
+    exit;
+}
+
+/**
+ * Sanitize input data
+ */
+function sanitize($data) {
     $data = trim($data);
     $data = stripslashes($data);
-    $data = htmlspecialchars($data);
+    $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
     return $data;
 }
 
-// Check if form was submitted via POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // Get and sanitize form data
-    $name = isset($_POST['name']) ? sanitize_input($_POST['name']) : '';
-    $email = isset($_POST['email']) ? sanitize_input($_POST['email']) : '';
-    $phone = isset($_POST['phone']) ? sanitize_input($_POST['phone']) : '';
-    $service = isset($_POST['service']) ? sanitize_input($_POST['service']) : 'Niet gespecificeerd';
-    $message = isset($_POST['message']) ? sanitize_input($_POST['message']) : '';
-    
-    // Validation
-    $errors = [];
-    
-    if (empty($name)) {
-        $errors[] = "Naam is verplicht";
-    }
-    
-    if (empty($email)) {
-        $errors[] = "Email is verplicht";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Ongeldig email adres";
-    }
-    
-    if (empty($phone)) {
-        $errors[] = "Telefoon is verplicht";
-    }
-    
-    if (empty($message)) {
-        $errors[] = "Bericht is verplicht";
-    }
-    
-    // Check for errors
-    if (!empty($errors)) {
-        echo json_encode([
-            'success' => false,
-            'message' => 'Validatie fouten',
-            'errors' => $errors
-        ]);
-        exit;
-    }
-    
-    // Email configuration
-    $to = "info@zaandak.nl";
-    $subject = "Nieuwe offerte aanvraag via zaandak.com";
-    
-    // Service name mapping
-    $service_names = [
-        'dakpannen' => 'Dakpannen vervangen',
-        'bitumen' => 'Bitumen dakbedekking',
-        'loodwerk' => 'Loodwerk',
-        'nokvorst' => 'Nokvorst herstel',
-        'isolatie' => 'Dakisolatie',
-        'zinkwerk' => 'Zinkwerk',
-        'anders' => 'Anders'
-    ];
-    
-    $service_display = isset($service_names[$service]) ? $service_names[$service] : $service;
-    
-    // Email body (HTML)
-    $email_body = "
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset='UTF-8'>
-        <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: #1a2332; color: #fff; padding: 20px; text-align: center; }
-            .content { background: #f9f9f9; padding: 30px; border: 1px solid #ddd; }
-            .field { margin-bottom: 20px; }
-            .label { font-weight: bold; color: #1a2332; margin-bottom: 5px; }
-            .value { padding: 10px; background: #fff; border-left: 3px solid #ff6b35; }
-            .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
-        </style>
-    </head>
-    <body>
-        <div class='container'>
-            <div class='header'>
-                <h2>Nieuwe Offerte Aanvraag</h2>
-            </div>
-            <div class='content'>
-                <div class='field'>
-                    <div class='label'>Naam:</div>
-                    <div class='value'>{$name}</div>
-                </div>
-                
-                <div class='field'>
-                    <div class='label'>Email:</div>
-                    <div class='value'>{$email}</div>
-                </div>
-                
-                <div class='field'>
-                    <div class='label'>Telefoon:</div>
-                    <div class='value'>{$phone}</div>
-                </div>
-                
-                <div class='field'>
-                    <div class='label'>Dienst:</div>
-                    <div class='value'>{$service_display}</div>
-                </div>
-                
-                <div class='field'>
-                    <div class='label'>Bericht:</div>
-                    <div class='value'>{$message}</div>
-                </div>
-            </div>
-            <div class='footer'>
-                <p>Deze aanvraag is verstuurd via het contactformulier op zaandak.com</p>
-                <p>Reageer binnen 24 uur voor de beste klantenservice</p>
-            </div>
-        </div>
-    </body>
-    </html>
-    ";
-    
-    // Plain text version
-    $email_body_plain = "
-Nieuwe Offerte Aanvraag via zaandak.com
-=====================================
+/**
+ * Validate email format
+ */
+function isValidEmail($email) {
+    return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
+}
 
-Naam: {$name}
-Email: {$email}
-Telefoon: {$phone}
-Dienst: {$service_display}
+/**
+ * Validate phone number (Dutch format)
+ */
+function isValidPhone($phone) {
+    // Remove spaces, dashes, etc.
+    $phone = preg_replace('/[^0-9+]/', '', $phone);
+    // Must be at least 10 digits
+    return strlen($phone) >= 10;
+}
 
-Bericht:
-{$message}
-
----
-Deze aanvraag is verstuurd via het contactformulier op zaandak.com
-    ";
+/**
+ * Check rate limiting
+ */
+function checkRateLimit() {
+    global $rate_limit_file, $rate_limit_time, $max_attempts;
     
-    // Email headers
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: Website <noreply@zaandak.nl>\r\n";
-    $headers .= "Reply-To: {$email}\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
-    
-    // Send email
-    $mail_sent = mail($to, $subject, $email_body, $headers);
-    
-    if ($mail_sent) {
-        // Success response
-        echo json_encode([
-            'success' => true,
-            'message' => 'Bedankt! Uw aanvraag is verstuurd. We nemen binnen 24 uur contact met u op.'
-        ]);
+    if (file_exists($rate_limit_file)) {
+        $data = json_decode(file_get_contents($rate_limit_file), true);
+        $last_time = $data['last_time'] ?? 0;
+        $attempts = $data['attempts'] ?? 0;
         
-        // Optional: Send auto-reply to customer
-        $customer_subject = "Bedankt voor uw aanvraag - Zaandak";
-        $customer_body = "
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset='UTF-8'>
-            <style>
-                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-                .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-                .header { background: #1a2332; color: #fff; padding: 20px; text-align: center; }
-                .content { padding: 30px; }
-            </style>
-        </head>
-        <body>
-            <div class='container'>
-                <div class='header'>
-                    <h2>Bedankt voor uw aanvraag!</h2>
-                </div>
-                <div class='content'>
-                    <p>Beste {$name},</p>
-                    
-                    <p>Bedankt voor uw interesse in Zaandak. We hebben uw aanvraag ontvangen en nemen binnen 24 uur contact met u op.</p>
-                    
-                    <p><strong>Uw aanvraag:</strong></p>
-                    <p>Dienst: {$service_display}<br>
-                    Telefoon: {$phone}<br>
-                    Email: {$email}</p>
-                    
-                    <p>Voor spoedeisende vragen kunt u ons direct bellen op <strong>+31 (06) 23313469</strong>.</p>
-                    
-                    <p>Met vriendelijke groet,<br>
-                    Team Zaandak</p>
-                </div>
-            </div>
-        </body>
-        </html>
-        ";
+        // Check if within rate limit window
+        if (time() - $last_time < 3600) { // 1 hour window
+            if ($attempts >= $max_attempts) {
+                sendResponse(false, 'Te veel aanvragen. Probeer het later opnieuw of bel ons direct.');
+            }
+            
+            // Check if too soon since last attempt
+            if (time() - $last_time < $rate_limit_time) {
+                sendResponse(false, 'Wacht even voordat u opnieuw verzendt.');
+            }
+            
+            $attempts++;
+        } else {
+            $attempts = 1;
+        }
         
-        $customer_headers = "MIME-Version: 1.0\r\n";
-        $customer_headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-        $customer_headers .= "From: Zaandak <info@zaandak.nl>\r\n";
-        $customer_headers .= "Reply-To: info@zaandak.nl\r\n";
-        
-        mail($email, $customer_subject, $customer_body, $customer_headers);
-        
+        // Update rate limit file
+        file_put_contents($rate_limit_file, json_encode([
+            'last_time' => time(),
+            'attempts' => $attempts
+        ]));
     } else {
-        // Error response
-        echo json_encode([
-            'success' => false,
-            'message' => 'Er is iets misgegaan. Probeer het opnieuw of bel ons op +31 (06) 23313469'
-        ]);
+        // Create rate limit file
+        file_put_contents($rate_limit_file, json_encode([
+            'last_time' => time(),
+            'attempts' => 1
+        ]));
     }
-    
+}
+
+// Only allow POST requests
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    sendResponse(false, 'Ongeldige aanvraag methode.');
+}
+
+// Check rate limiting
+checkRateLimit();
+
+// CSRF Token validation (optional - uncomment if you add tokens to form)
+/*
+if (!isset($_POST['csrf_token']) || !isset($_SESSION['csrf_token']) || 
+    $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+    sendResponse(false, 'Beveiligingsvalidatie mislukt. Vernieuw de pagina en probeer opnieuw.');
+}
+*/
+
+// Collect and sanitize form data
+$name = isset($_POST['name']) ? sanitize($_POST['name']) : '';
+$email = isset($_POST['email']) ? sanitize($_POST['email']) : '';
+$phone = isset($_POST['phone']) ? sanitize($_POST['phone']) : '';
+$service = isset($_POST['service']) ? sanitize($_POST['service']) : 'Niet gespecificeerd';
+$message = isset($_POST['message']) ? sanitize($_POST['message']) : '';
+
+// Validation array
+$errors = [];
+
+// Validate required fields
+if (empty($name)) {
+    $errors['name'] = 'Naam is verplicht';
+}
+
+if (empty($email)) {
+    $errors['email'] = 'Email is verplicht';
+} elseif (!isValidEmail($email)) {
+    $errors['email'] = 'Ongeldig email adres';
+}
+
+if (empty($phone)) {
+    $errors['phone'] = 'Telefoonnummer is verplicht';
+} elseif (!isValidPhone($phone)) {
+    $errors['phone'] = 'Ongeldig telefoonnummer';
+}
+
+if (empty($message)) {
+    $errors['message'] = 'Bericht is verplicht';
+} elseif (strlen($message) < 10) {
+    $errors['message'] = 'Bericht moet minimaal 10 karakters bevatten';
+}
+
+// Check for validation errors
+if (!empty($errors)) {
+    sendResponse(false, 'Vul alle verplichte velden correct in.', $errors);
+}
+
+// Honeypot check (add a hidden field in HTML named "website" - bots will fill it)
+if (!empty($_POST['website'])) {
+    // Likely a bot - silently fail
+    sendResponse(true, 'Bedankt! Uw bericht is verzonden.');
+}
+
+// Service name mapping
+$service_names = [
+    'bitumen' => 'Bitumen Dakbedekking',
+    'dakpannen' => 'Dakpannen Vervangen',
+    'zinkwerk' => 'Zinkwerk',
+    'loodwerk' => 'Loodwerk',
+    'nokvorst' => 'Nokvorst Herstel',
+    'dakisolatie' => 'Dakisolatie',
+    'inspectie' => 'Dakinspectie',
+    'reparatie' => 'Dakreparatie',
+    'onderhoud' => 'Dakonderhoud',
+    'anders' => 'Anders'
+];
+
+$service_display = isset($service_names[$service]) ? $service_names[$service] : $service;
+
+// Build email message
+$email_subject = $subject_prefix . " - " . $service_display;
+
+$email_body = "Nieuwe offerte aanvraag via zaandak.com\n\n";
+$email_body .= "========================================\n\n";
+$email_body .= "KLANTGEGEVENS:\n";
+$email_body .= "Naam: " . $name . "\n";
+$email_body .= "Email: " . $email . "\n";
+$email_body .= "Telefoon: " . $phone . "\n";
+$email_body .= "Dienst: " . $service_display . "\n\n";
+$email_body .= "========================================\n\n";
+$email_body .= "BERICHT:\n";
+$email_body .= $message . "\n\n";
+$email_body .= "========================================\n\n";
+$email_body .= "Verzonden op: " . date('d-m-Y H:i:s') . "\n";
+$email_body .= "IP adres: " . $_SERVER['REMOTE_ADDR'] . "\n";
+$email_body .= "User Agent: " . $_SERVER['HTTP_USER_AGENT'] . "\n";
+
+// Email headers
+$headers = [];
+$headers[] = "From: " . $from_email;
+$headers[] = "Reply-To: " . $email;
+$headers[] = "X-Mailer: PHP/" . phpversion();
+$headers[] = "MIME-Version: 1.0";
+$headers[] = "Content-Type: text/plain; charset=UTF-8";
+
+// Send email
+$mail_sent = mail($to_email, $email_subject, $email_body, implode("\r\n", $headers));
+
+if ($mail_sent) {
+    // Success
+    sendResponse(true, 'Bedankt voor uw aanvraag! We nemen binnen 24 uur contact met u op.');
 } else {
-    // Not a POST request
-    echo json_encode([
-        'success' => false,
-        'message' => 'Ongeldige aanvraag'
-    ]);
+    // Email failed - log error and return generic message
+    error_log("Contact form mail() failed for: " . $email);
+    sendResponse(false, 'Er is iets misgegaan bij het verzenden. Probeer het later opnieuw of bel ons direct op +31 (06) 23313469.');
 }
 ?>
